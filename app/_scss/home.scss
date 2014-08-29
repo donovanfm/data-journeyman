@@ -5,8 +5,13 @@
 		background-color: rgba(0,0,0,0);
 	}
 	a.post-link {
+		color: black;
+		.row {
+			margin: 10px 0;
+			border: 1px solid #dddddd
+		}
 		.row:hover {
-			background-color: #dddddd;
+			background-color: #eeeeee;
 		}
 	}
 }
