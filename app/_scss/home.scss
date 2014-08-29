@@ -2,5 +2,11 @@
 	img.thumbnail {
 		width: 100%;
 		border: none;
+		background-color: rgba(0,0,0,0);
+	}
+	a.post-link {
+		.row:hover {
+			background-color: #dddddd;
+		}
 	}
 }
