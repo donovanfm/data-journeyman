@@ -3,12 +3,14 @@
 		width: 100%;
 		border: none;
 		background-color: rgba(0,0,0,0);
+		margin-bottom: 0;
 	}
 	a.post-link {
 		color: black;
 		.row {
 			margin: 10px 0;
-			border: 1px solid #dddddd
+			border: 1px solid #dddddd;
+			height: 175px;
 		}
 		.row:hover {
 			background-color: #eeeeee;
