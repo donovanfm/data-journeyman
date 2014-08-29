@@ -1,14 +1,39 @@
 #header {
 	text-align: center;
+	margin-bottom: 40px;
+	font-family: anglecia;
+
+	& * {
+		color: black;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
 	.title {
 		width: 100%;
-
-		color: black;
+		margin-bottom: 15px;
+		
 		font-size: 130px;
 		line-height: 140px;
-		font-family: anglecia;
+		
 
 		background-image: url("/img/noise-large.png");
 		background-size: cover;
+	}
+
+	.tagline {
+		font-size: 20px;
+		line-height: 25px;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		img {
+			margin-left: 2px;
+			margin-bottom: -5px;
+		}
 	}
 }
