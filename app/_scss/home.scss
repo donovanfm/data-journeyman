@@ -13,5 +13,14 @@
 		.row:hover {
 			background-color: #eeeeee;
 		}
+		.post-heading {
+			& > * {
+				display: inline-block;
+			}
+			.title {
+				margin-right: 20px;
+				margin-bottom: 0;
+			}
+		}
 	}
 }

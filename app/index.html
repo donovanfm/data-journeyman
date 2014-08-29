@@ -14,7 +14,10 @@ title: Data Journeyman
 							<img class='thumbnail' src='/img/{{ post.thumbnail | "logo.png" }}' />
 						</div>
 						<div class='col-md-10'>
-							<h3 class='title'>{{ post.title }}</h3>
+							<div class='post-heading'>
+								<h3 class='title'>{{ post.title }}</h3>
+								<h5 class='date'>{{ post.date | date: "%Y-%m-%d" }}</h5>
+							</div>
 							<p>{{ post.blurb }}</p>
 						</div>
 					</div>
