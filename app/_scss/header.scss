@@ -1,7 +1,14 @@
 #header {
 	text-align: center;
-	img.title {
+	.title {
 		width: 100%;
-		max-width: 900px;
+
+		color: black;
+		font-size: 130px;
+		line-height: 140px;
+		font-family: anglecia;
+
+		background-image: url("/img/noise-large.png");
+		background-size: cover;
 	}
 }
