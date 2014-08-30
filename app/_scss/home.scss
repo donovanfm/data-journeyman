@@ -24,27 +24,5 @@
 				margin-bottom: 0;
 			}
 		}
-		.tags {
-			.tag {
-				padding: 5px;
-				border-radius: 5px;
-				color: black;
-				&.Personal {
-					background-color: rgba(243, 71, 31, 0.6);
-				}
-				&.Continued.Narrative {
-					background-color: rgba(162, 95, 217, 0.5);
-				}
-				&.Tools {
-					background-color: rgba(40, 195, 240, 0.6);
-				}
-				&.iPython {
-					background-color: rgba(102, 217, 74, 0.6);
-				}
-				&.Stats {
-					background-color: rgba(242, 187, 37, 0.6);
-				}
-			}
-		}
 	}
 }
