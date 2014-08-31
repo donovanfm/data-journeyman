@@ -6,7 +6,6 @@ thumbnail: tool-logo.png
 tags: 
   - Tools
   - iPython
-  - Continued Narrative
 ---
 
 Talk about the tools.

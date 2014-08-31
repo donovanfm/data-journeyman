@@ -5,7 +5,6 @@ blurb: "In this prefatory post, I will answer several starting questions. Who am
 thumbnail: logo.png
 tags: 
   - Personal
-  - Continued Narrative 
 ---
 
 ###Hello.
