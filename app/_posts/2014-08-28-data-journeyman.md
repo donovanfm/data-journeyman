@@ -25,8 +25,6 @@ Maybe some of this excitement around Big Data is hype, but the trend is there, a
 
 ###What is a Data Journeyman?
 
-[[Insert Jackie Chan Picture]]
-
 Data Scientist. Data Analyst. Data Engineer. Data Specialist. Data Wrangler. All these terms and others are used with varying accuracy to describe people who deal with data. Plus, given the projected growth of the field, it's believable that these terms will shift or possibly be redefined completely. Not to mention the new terms that will probably surface. So, talking about roles in this field can be confusing and frustrating to say the least.
 
 I, however, don't fit any of those roles. Yet.
