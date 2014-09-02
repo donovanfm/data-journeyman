@@ -14,6 +14,8 @@ module.exports = function (grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
 
+  grunt.loadNpmTasks('grunt-newer');
+
   grunt.initConfig({
     // Configurable paths
     yeoman: {
@@ -379,7 +381,7 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'cssmin',
     'uglify',
-    'imagemin',
+    'newer:imagemin',
     'svgmin',
     'filerev',
     'usemin',
