@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Journeyman"
-blurb: "In this prefatory post, I will answer several starting questions. Who am I? What will this blog cover? What is a Data Journeyman, anyway?"
+blurb: "In this prefatory post, I will answer several starting questions.<br> Who am I? What will this blog cover? What is a Data Journeyman, anyway?"
 thumbnail: logo.png
 tags: 
   - Personal
@@ -17,7 +17,7 @@ In school I always had a love for math, and at one point I even considered major
 
 There is so much excitement right now around data, and I think for good reason. Data is becoming more and more prevalent as more and more devices are becoming connected. By [Cisco's predictions](http://newsroom.cisco.com/feature-content?type=webcontent&articleId=1208342), we will reach 50 billion connected devices by the year 2020. And with a constantly growing number of devices, the number of connections will grow even faster. Soon, these connected devices and the data they generate could influence nearly every aspect of our day to day lives. In this [one example on WIRED](http://innovationinsights.wired.com/insights/2014/08/everything-hyper-connected-internet-things/), someone in the future is recovering from a hip replacement, and several systems work together to aid in his recovery, including his doctor, pharmacy, insurance, utilities, and car. But as the WIRED article state, none of this will be possible without an emphasis on data to drive the seamless connection between the components of the system.
 
-With this ever-increasing supply of data, the potential to extract meaningful knowledge out of the average human's interations and routines is _immense_! But by many accounts, including [this one from the Wall Street Journal](http://online.wsj.com/news/articles/SB10001424052702304723304577365700368073674), the growth of professionals who can deal with this data isn't increasing at the same rate as the data itself. Pat Gelsinger, COO of [EMC Corp.](http://www.emc.com/big-data/index.htm?nav=1#Points-of-View) is quoted in that WSJ artical saying,
+With this ever-increasing supply of data, the potential to extract meaningful knowledge out of the average human's interactions and routines is _immense_! But by many accounts, including [this one from the Wall Street Journal](http://online.wsj.com/news/articles/SB10001424052702304723304577365700368073674), the growth of professionals who can deal with this data isn't increasing at the same rate as the data itself. Pat Gelsinger, COO of [EMC Corp.](http://www.emc.com/big-data/index.htm?nav=1#Points-of-View) is quoted in that WSJ artical saying,
 
 >Thirty years ago we didn't have computer-science departments; now every quality school on the planet has a CS department. Now nobody has a data-science department; in 30 years every school on the planet will have one.
 
@@ -29,7 +29,7 @@ Data Scientist. Data Analyst. Data Engineer. Data Specialist. Data Wrangler. All
 
 I, however, don't fit any of those roles. Yet.
 
-I am just starting my venture into the world of data. I do have a statistics and AI background from college, so I'm not starting from scratch, but I do have a long way to go before I'm worthy of any of the aforementioned roles. So for now, I'm just a journeyman.
+I am just starting my venture into the world of data. I do have a statistics and AI background from college, so I'm not starting from scratch, but I have a long way to go before I'm worthy of any of the aforementioned roles. So for now, I'm just a journeyman.
 
 Wikipedia defines a [journeyman](http://en.wikipedia.org/wiki/Journeyman) as follows:
 
@@ -43,4 +43,6 @@ In a talk at the Galileo Symposium in Italy on the 400th anniversary of Galileo'
 
 >But another way and a very important one that should not be neglected and that is very vital is to put together ideas to try to enforce a logical consistency among the various things that you know. It is a very valuable thing to try to connect this, what you know, with that, that you know, and try to find out if they are consistent. And the more activity in the direction of trying to put together the ideas of different directions, the better it is.
 
-So that, I think, is the main goal of any Data [insert role]. Given a mountain of data (the stuff that you know), how can you filter it, massage it, love it, and combine it to reveal a truth about the world. I hope that through this blog, as a Data Journeyman, I'm able to connect the dots between the many areas of Data Science in a logically consistent way, from statistics to machine learning, from data analysis tools to visualization tools, from the unintuitive to the downright beautiful, for myself and other journeyman (and women) alike. 
+So that, I think, is the main goal of any Data [insert role]. Given a mountain of data (the stuff that you know), how can you filter it, massage it, love it, and combine it to reveal a truth about the world. I hope that through this blog, as a Data Journeyman, I'm able to connect the dots between the many areas of Data Science in a logically consistent way, from statistics to machine learning, from data analysis tools to visualization tools, from the unintuitive to the downright beautiful, for myself and other journeymen (and women) alike. 
+
+I plan to explore the books, blogs, websites, [MOOCs](http://en.wikipedia.org/wiki/Massive_open_online_course), communities, and other resources I can find that focus on data. Perhaps my journey won't be representative of every aspiring data scientist – after all, I am but one data point – but I hope that through my journey I can shed some light on the path for others to follow. So let's begin.
