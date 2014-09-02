@@ -14,9 +14,24 @@
 	.title {
 		width: 100%;
 		margin-bottom: 15px;
-		
-		font-size: 130px;
+
+		font-size: 40px;
 		line-height: 140px;
+
+		@media (min-width: 600px) {
+			font-size: 70px;
+			line-height: 140px;
+		}
+		
+		@media (min-width: 900px) {
+			font-size: 90px;
+			line-height: 140px;
+		}
+
+		@media (min-width: 1200px) {
+			font-size: 130px;
+			line-height: 140px;
+		}
 		
 
 		background-image: url("/img/noise-large.png");
