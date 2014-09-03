@@ -14,13 +14,13 @@ tags:
 >
 >-Thomas Carlyle
 
-The human brain alone isn't capable of storing and performing operations on the amount of data that data projects entail, so tools are a necessity. And the tools we use are very important.
+The human brain alone isn't capable of storing and performing operations on the amount of data that data projects entail, so tools are a necessity. 
 
 In this blog, at least at the beginning, we won't need the really heavy-lifting tools that allow humongous data sets. And also, as the blog progresses, new tools will surely be added and removed from the Data Journeyman toolbelt. This post is just about defining a starting place.
 
 #### IPython Notebook
 
-Work in data science isn't always about generating a complete, functioning program as an end result like typical programming is. Often what needs to be captured is a series of operations executed on a dataset. [IPython Notebook](http://ipython.org/notebook.html) is a great way to document this process. Many future posts will be accompanied by a notebook to show the transformation process on some data related to the post's topic. 
+Work in data science isn't always about generating a complete, functioning program like typical programming is. Often what needs to be captured is a series of operations executed on a dataset. [IPython Notebook](http://ipython.org/notebook.html) is a great way to document this process. Many future posts will be accompanied by a notebook to show the transformation process on some data related to the post's topic. 
 
 I'm not going to cover the installation process because it's been covered so well in other places. To get started, check out [this guide](http://ipython.org/ipython-doc/2/install/install.html).
 
