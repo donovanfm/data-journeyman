@@ -5,7 +5,7 @@ blurb: "In honor of my birthday weekend, here's a look at one of the first unint
 thumbnail: birthday-logo.png
 tags: 
   - Statistics
-  - iPython
+  - IPython
 ---
 
 ###The Paradox
