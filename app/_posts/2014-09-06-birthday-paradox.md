@@ -72,9 +72,11 @@ Again, finding this probability is more easily done but first finding the probab
 \end{eqnarray}
 \\]
 
+The only other option from having no shared birthdays is to have a least one pair of shared birthdays, i.e., at least two shared birthdays.
+
 \\[
 \begin{eqnarray}
-&P&(\text{ at least 1 pair of shared birthdays })\\\\
+&P&(\text{ at least 2 shared birthdays })\\\\
 &=& 1 - P(\text{ no shared birthdays })\\\\
 &=& 0.5073
 \end{eqnarray}
