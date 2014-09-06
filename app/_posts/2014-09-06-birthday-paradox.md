@@ -108,5 +108,34 @@ After writing a quick program and letting my computer grind on it for about 5 mi
 
 ###N Matching Birthdays
 
+So far, we've only looked at the probability of a group having 2 or more birthdays. What about the probability of having exactly 2 matching birthdays? Or exactly 5? Or everyone having a matching birthday? It's not hard to modify our computations to generalize that piece of that problem.
+
+Let's set the If we run a million trials to see how many birthday matches we get 
+
+![Likelihood of N Matching Birthdays in a Group of 23](/img/n-matching-birthdays.png)
+
+\\[
+\begin{eqnarray}
+ 0 &:& 294007\\\\
+ 2 &:& 379698\\\\
+ 3 &:& 10612\\\\
+ 4 &:& 212998\\\\
+ 5 &:& 10870\\\\
+ 6 &:& 69195\\\\
+ 7 &:& 4931\\\\
+ 8 &:& 14091\\\\
+ 9 &:& 1224\\\\
+ 10 &:& 1948\\\\
+ 11 &:& 191\\\\
+ 12 &:& 194\\\\
+ 13 &:& 25\\\\
+ 14 &:& 14\\\\
+ 15 &:& 1\\\\
+ 16 &:& 1\\\\
+\end{eqnarray}
+\\]
+
+
+
 ###Birthday Attack
 
