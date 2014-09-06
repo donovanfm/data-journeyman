@@ -1,5 +1,19 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	MathJax.Hub.Config({
+		"HTML-CSS": { linebreaks: { automatic: true } },
+		SVG: { linebreaks: { automatic: true } },
+		TeX: { 
+            Macros: { 
+              goodbreak: '\\mmlToken{mo}[linebreak="goodbreak"]{}', 
+              badbreak: ['\\mmlToken{mo}[linebreak="badbreak"]{#1}',1], 
+              nobreak: ['\\mmlToken{mo}[linebreak="nobreak"]{#1}',1], 
+              invisibletimes: ['\\mmlToken{mo}{\u2062}'] 
+            } 
+        } 
+    }); 
+</script>
 
 <!-- build:js(app) /js/scripts.js -->
 <script src="/js/main.js"></script>
