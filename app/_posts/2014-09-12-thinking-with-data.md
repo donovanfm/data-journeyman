@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Thinking With Data"
-blurb: "words"
+blurb: "In this post I'll take a look at Max Shron's book <i>Thinking With Data: How to Turn Information into Insights</i>."
 thumbnail: book-logo.png
 tags: 
   - Data Analysis
