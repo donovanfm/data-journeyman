@@ -21,8 +21,14 @@
 		&.Statistics {
 			background-color: rgba(11, 118, 150, 0.5);
 		}
-		&.Book.Analysis {
+		&.Data.Analysis {
+			background-color: rgba(32, 77, 235, 0.5);
+		}
+		&.Book {
 			background-color: rgba(62, 147, 54, 0.5);
+		}
+		&.Video {
+			background-color: rgba(262, 117, 14, 0.5);
 		}
 	}
 }
