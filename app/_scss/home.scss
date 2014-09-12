@@ -28,4 +28,11 @@
 			max-width: 550px;
 		}
 	}
+	#tag-filters {
+		margin: 20px;
+		.tag-filter-label {
+			font-weight: bold;
+			margin-right: 10px;
+		}
+	}
 }
