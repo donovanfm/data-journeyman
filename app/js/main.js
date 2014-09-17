@@ -1,6 +1,11 @@
 //main.js
 
-(function(){
+(function main(){
+	setupTagFilters();
+})()
+
+function setupTagFilters() {
+	if (!document.getElementById("tag-filters")) { return; }
 	var tagFilters = document.getElementById("tag-filters").getElementsByClassName("tag");
 	var posts = document.getElementById("home").getElementsByClassName("post-link");
 
@@ -85,4 +90,4 @@
 
 	filterPosts();
 	window.onhashchange = filterPosts;
-})()
+}
