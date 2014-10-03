@@ -9,7 +9,7 @@ tags:
   - Ice Cream Crimes
 ---
 
-(Data and computations for this post can be found [here](/ipython-notebooks/Ice\ Cream\ Crimes).)
+(Data and computations for this post can be found [here](https://github.com/dfmcmurray/data-journeyman/tree/gh-pages/ipython-notebooks/Ice%20Cream%20Crimes).)
 
 ###Correlating Ice Cream Sales and Violent Crime Rates
 
