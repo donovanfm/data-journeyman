@@ -19,7 +19,9 @@
 		}
 		img {
 			width: 100%;
-			max-width: 420px;
+			&:not(.full-size) {
+				max-width: 420px;
+			}
 			display: inherit;
 			margin-left: auto;
 			margin-right: auto;
