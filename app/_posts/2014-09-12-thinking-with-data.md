@@ -7,6 +7,7 @@ tags:
   - Data Analysis
   - Book
   - Video
+  - Terms
 ---
 
 ###The Author and The Book
