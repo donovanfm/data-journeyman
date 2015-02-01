@@ -22,7 +22,7 @@ This post explores the nuances of this paradox. For simplicity, the remainder of
 
 If only I had had IPython as a teenager, I would have been able to convince myself much more quickly that the birthday paradox is true. 
 
-Download the IPython Notebook for this post [here](/ipython-notebooks/Birthday\ Paradox.ipynb).
+Download the IPython Notebook for this post [here](/ipython-notebooks/Birthday Paradox.ipynb).
 
 ###Guessing a Birthday
 

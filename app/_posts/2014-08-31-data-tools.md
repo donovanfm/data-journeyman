@@ -26,7 +26,7 @@ I'm not going to cover the installation process because it's been covered so wel
 
 Running IPython Notebook with the command `ipython notebook --pylab=inline` will automatically import NumPy and matplotlib for you. The examples in this blog will assume IPython Notebook is run this way.
 
-[Here](/ipython-notebooks/Data\ Tools.ipynb)'s an example IPython Notebook that covers some of the tools in this post. Just download the file and run the above command in the folder containing it.
+[Here](/ipython-notebooks/Data Tools.ipynb)'s an example IPython Notebook that covers some of the tools in this post. Just download the file and run the above command in the folder containing it.
 
 #### NumPy
 

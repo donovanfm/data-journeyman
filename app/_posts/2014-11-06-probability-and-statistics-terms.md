@@ -9,6 +9,7 @@ tags:
   - Statistics
   - Book
   - Terms
+  - IPython
 ---
 
 ###Initial Probability and Statistics Concepts
