@@ -2,7 +2,7 @@
 layout: post
 title: "Wikipedia With Academic Styling"
 blurb: "Wikipedia is an unrivaled source of information, but who says you can't have brains and looks?"
-thumbnail: Wikipedia-logo.png
+thumbnail: wikipedia-logo.png
 tags: 
   - Tools and Resources
 ---
