@@ -28,6 +28,10 @@ One metric of the quality of an estimator is it's [Mean Squared Error (MSE)](htt
 
 \\[MSE(\hat \theta) = E[(\hat \theta - \theta)^2] = \frac{1}{n} \sum_{i=1}^{n} (\hat \theta_i - \theta_i)^2\\]
 
+####Maximum Likelihood Estimate
+
+Another positive attribute of an estimator is if it's the Maximum Likelihood Estimate. In many cases this is the estimator that minimizes MSE, but it's not always the case. Take the example of three six-sided dice being rolled. The estimator that minimizes MSE is 10.5, but 10 and 11 are the MLEs since 10.5 is not a valid outcome.
+
 ####Estimator Bias
 
 An unwanted property of an estimator is its [bias](http://en.wikipedia.org/wiki/Bias_of_an_estimator). An estimator's bias is the difference between the estimators expected value and the true parameter's value. Since it's directly related to the estimator's expected value, it naturally has an impact on the estimator's MSE. 
