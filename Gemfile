@@ -6,3 +6,4 @@ source "http://rubygems.org"
 # gem 'sass', '>=3.2'
 
 gem 'github-pages'
+gem 'jekyll-sitemap'

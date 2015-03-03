@@ -24,3 +24,6 @@ markdown: kramdown
 #   extensions: ['fenced_code_blocks', 'smart']
 
 pygments: true
+
+gems: 
+  - jekyll-sitemap
