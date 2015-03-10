@@ -66,8 +66,8 @@ Again, finding this probability is more easily done but first finding the probab
 
 \\[
 \begin{eqnarray}
-&P&(\text{ no shared birthdays  }) \\\\
-&=& \dfrac{365}{365} \times \dfrac{364}{365} \times \dfrac{363}{365} \times \ldots \times \dfrac{343}{365}\\\\
+&P&(\text{ no shared birthdays  }) \\cr
+&=& \dfrac{365}{365} \times \dfrac{364}{365} \times \dfrac{363}{365} \times \ldots \times \dfrac{343}{365}\\cr
 &=& 0.4927
 \end{eqnarray}
 \\]
@@ -76,8 +76,8 @@ The only other option from having no shared birthdays is to have a least one pai
 
 \\[
 \begin{eqnarray}
-&P&(\text{ at least 2 shared birthdays })\\\\
-&=& 1 - P(\text{ no shared birthdays })\\\\
+&P&(\text{ at least 2 shared birthdays })\\cr
+&=& 1 - P(\text{ no shared birthdays })\\cr
 &=& 0.5073
 \end{eqnarray}
 \\]
