@@ -59,7 +59,7 @@ Since the data shown to each group in this phase is the same, the reason for any
 
 After Phase 2 when asked to comment on the likelihood that Medicine B was effective, the high-illusory group's collective judgement for Medicine B's effectiveness was \\(\mu = 67.42, \sigma = 2.49\\), while the low-illusory group's was \\(\mu = 74.36, \sigma = 2.31\\). So the high-illusory group was less able to recognize the effectiveness of Medicine B, an effect which actually exists.
 
-In the words of Yarritu, et al., "[W]hen the probability of the outcome is high, a high probability of the potential cause leads to a stronger illusion of causality than does a low probability....Thus, as expected, previous training on an illusory belief about Medicine A exerted an influence over the establishment of a true evidence-based belief concerning the effectiveness ofMedicine B."
+In the words of Yarritu, et al., "[W]hen the probability of the outcome is high, a high probability of the potential cause leads to a stronger illusion of causality than does a low probability....Thus, as expected, previous training on an illusory belief about Medicine A exerted an influence over the establishment of a true evidence-based belief concerning the effectiveness of Medicine B."
 
 ###Takeaways
 
