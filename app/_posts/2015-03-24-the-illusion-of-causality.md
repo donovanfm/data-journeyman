@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Illusion of Causality"
-blurb: "Incorrectly recognizing a relationship as causal is so hard wired into the human psyche, experts have given it a name: causal illusion."
+blurb: "Incorrectly recognizing a relationship as causal is so hard-wired into the human psyche, experts have given it a name: causal illusion."
 thumbnail: scatter-brain-dark-logo.png
 tags: 
   - Ice Cream Crimes
