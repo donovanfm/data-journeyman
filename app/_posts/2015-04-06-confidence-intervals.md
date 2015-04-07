@@ -36,7 +36,7 @@ In the last probability expression, it's clear that we only need to see what the
 
 ###Example 2: Finding the Interval
 
-> In a local teaching district, a technology grant is available to teachers in order to install a cluster of four computers in their cassrooms. From the 6,250 teachers in the district, 250 were randomly selected and asked if they felt that computers were an essential teaching tool for their classrom. Of those selected, 142 teachers felt that computers were an essential teaching tool.
+> In a local teaching district, a technology grant is available to teachers in order to install a cluster of four computers in their classrooms. From the 6,250 teachers in the district, 250 were randomly selected and asked if they felt that computers were an essential teaching tool for their classrom. Of those selected, 142 teachers felt that computers were an essential teaching tool.
 >
 > 1. Calculate a 99% confidence interval for the proportion of teachers who felt that computers are an essential teaching tool.
 > 2. How could the survey be changed to narrow the confidence interval but maintain the 99% confidence interval?
