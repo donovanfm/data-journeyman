@@ -17,7 +17,7 @@ On April 1, Reddit announced a simple new subreddit named [/r/thebutton](http://
 
 That's it. It's so simple. Not the kind of thing that you would think an entire statistics post could be based on. But what has come out of this experiment is by no means simple. There are a plethora of [factions](http://imgur.com/gallery/ue3Wt)/[religions](http://www.reddit.com/r/thebutton/comments/31709l/official_survey_of_the_buttons_religions_record/), [propoganda](http://imgur.com/a/kX0h1) [posters](http://imgur.com/a/89i6z), [fan art](http://www.reddit.com/r/thebutton/comments/31mdkf/the_huge_list_of_everything_button/), and even [conspiracy theories](http://www.reddit.com/r/thebuttonisalie) and [sabotage campaigns](http://www.reddit.com/r/thebutton/comments/328wod/warning_avoid_these_plugins_one_of_them_is/). It's a veritable Game of Chromes, survival of the quickest, and it is no less than legendflairy (Guys, are we still doing [legendary puns](http://i3.kym-cdn.com/photos/images/original/000/706/483/60e.png)? Guys?)
 
-###The Shape of the Data So Far
+###The Shape of the Data
 
 Get the IPython Notebook used in this analysis [here](https://github.com/dfmcmurray/data-journeyman/tree/master/app/ipython-notebooks/The%20Button)
 
