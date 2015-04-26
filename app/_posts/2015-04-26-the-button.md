@@ -19,7 +19,7 @@ That's it. It's so simple. Not the kind of thing that you would think an entire 
 
 ###The Shape of the Data So Far
 
-Get the IPython Notebook used in this analysis [here](/ipython-notebooks/The Button)
+Get the IPython Notebook used in this analysis [here](https://github.com/dfmcmurray/data-journeyman/tree/master/app/ipython-notebooks/The%20Button)
 
 The data naturally trends downward for two reasons. Every minute, there are fewer eligible people to press (account created on or after April 1 cannot press). Also, since low-numbered flairs are more rare, some people will hold out for them.
 
