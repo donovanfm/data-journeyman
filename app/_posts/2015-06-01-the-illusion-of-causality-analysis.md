@@ -22,6 +22,8 @@ With the possible confounding effects of the naming out of the way, the actual e
 
 Since there are only two groups on this axis, the d.f. for SSB is 1. Since there were 147 participants in the study, and they were broken into 4 groups in total, each group would have its last participant's results fixed, so the overall d.f. for SSW is 143.  
 
+We've seen how to find F-statistic using an F table, but if you need to find an F-statistic for a significance level or d.f. that isn't in a common table, you can use an [F distribution calculator](http://stattrek.com/online-calculator/f-distribution.aspx) instead.
+
 After Phase 1, the F-statistic between the experimental groups is calculated to be 28.17, which has a significance level of 0.000015, well below even a conservative p-value of 0.01. This shows that the intended effect of creating the illusion was very likely successful.
 
 After Phase 2, the F-statistic between the experimental groups is calculated to be 4.05, which has a significance level of 0.05, which would just pass for a p-value of 0.05, but it's still significant enough to assume there was an effect.
