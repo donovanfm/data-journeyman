@@ -19,7 +19,7 @@ Immediately, I thought back to a mathematical proof by [Georg Cantor](https://en
 
 So, instead of a full blog post this week, I'm just going to link to the two videos I created that lead up to this amazing argument by Cantor, his diagonal argument. The first video is a general introduction to set theory, and gives you everything you need for the second video, which lays out the idea that infinite sets can have different sizes.
 
-1) [Set Theory Basics](https://www.youtube.com/watch?v=IqX0emlxVEU)
-2) [Infinite Sets](https://www.youtube.com/watch?v=IQgEzF2a0_I)
+1. [Set Theory Basics](https://www.youtube.com/watch?v=IqX0emlxVEU)
+2. [Infinite Sets](https://www.youtube.com/watch?v=IQgEzF2a0_I)
 
 In data science, we wouldn't get very far without sets of data, and while grinding away on practical problems is fun and extemely useful, a good perspective of the theoretical will only enrich your understanding.
