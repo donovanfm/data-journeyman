@@ -1,6 +1,5 @@
 #header {
 	text-align: center;
-	margin-bottom: 40px;
 	font-family: anglecia;
 
 	& * {
@@ -12,11 +11,9 @@
 	}
 
 	.title {
-		width: 100%;
-		margin-bottom: 15px;
-
-		font-size: 42px;
-		line-height: 140px;
+		width: 100%;		
+	    display: block;
+	    background-position: center;
 
 		@media (min-width: 600px) {
 			font-size: 70px;
@@ -33,12 +30,32 @@
 			line-height: 140px;
 		}
 		
-
-		background-image: url("/img/noise-small.png");
-		@media (min-width: 600px) {
-			background-image: url("/img/noise-large-sparsest.png");
+		height: 75px;
+		background-image: url("/img/header-logo-sm.png");
+		@media (min-width: 250px) {
+			height: 80px;
 		}
-		background-size: cover;
+		@media (min-width: 300px) {
+			height: 100px;
+		}
+		@media (min-width: 400px) {
+			height: 135px;
+		}
+		@media (min-width: 500px) {
+			height: 175px;
+		}
+		@media (min-width: 600px) {
+			background-image: url("/img/header-logo-lg.png");
+			height: 100px
+		}
+		@media (min-width: 800px) {
+			height: 125px;
+		}
+		@media (min-width: 900px) {
+			height: 150px;
+		}
+		background-size: contain;
+	    background-repeat: no-repeat;
 	}
 
 	.tagline {
