@@ -5,6 +5,7 @@ blurb: "I take an introspective look at what the scientist part of data scientis
 thumbnail: beaker-logo.png
 tags: 
   - Personal
+  - Ethics
 ---
 
 A recent encounter with a family member caused me to reflect on what it means to be scientifically minded. In this particular conversation, I was confronted with ideas such as “The CERN particle accelerator is causing catastrophic earthquakes”, “A sea monster washed up on the shore of New York and was covered up by the government,” and “There are lizard people living among us in secrecy.” 

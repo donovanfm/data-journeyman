@@ -26,5 +26,29 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		.pull-quote {
+			font-family: Helvetica,Arial,sans-serif;
+		    font-size: 2.75rem;
+		    font-style: italic;
+		    text-transform: uppercase;
+		    font-weight: 500;
+		    /*color: #2b9ada;*/
+		    color: #888;
+		    margin: 1.75rem 1.75rem 1.5rem;
+		    quotes: none;
+		    display: block;
+		    line-height: 1;
+		    text-align: center;
+		    &.right {
+		    	float: right;
+		    	max-width: 40%;
+		    	text-align:left;
+		    }
+		    &.left {
+		    	float: left;
+		    	max-width: 40%;
+		    	text-align: right;
+		    }
+		}
 	}
 }

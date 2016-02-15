@@ -5,6 +5,7 @@ blurb: "'Correlation does not imply causation' is data science mantra, but in th
 thumbnail: logo.png
 tags: 
   - Data Analysis
+  - Visualization
 ---
 
 ###Correlation Envy
