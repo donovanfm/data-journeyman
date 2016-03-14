@@ -1,3 +1,0 @@
-Cleveland and McGill go on to test each visual encoding's effectiveness by measuring [preattentive processing](https://en.wikipedia.org/wiki/Pre-attentive_processing), or "instantaneous perception of the visual field that comes without apparent mental effort."
-
-A good example of taking advantage of preattentive processing in data visualation can be found in [this post](http://www.storytellingwithdata.com/blog/2011/10/google-example-preattentive-attributes) on the *Storytelling with Data* blog.
