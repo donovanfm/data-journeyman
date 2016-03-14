@@ -381,7 +381,7 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'cssmin',
     'uglify',
-    'newer:imagemin',
+    // 'newer:imagemin',
     'svgmin',
     'filerev',
     'usemin',
