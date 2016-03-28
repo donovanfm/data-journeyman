@@ -1,4 +1,0 @@
-###Case Study
-
-Harvard researchers greatly improve medical visualization
-http://gvi.seas.harvard.edu/sites/all/files/borkin-InfoVis2011_camera-ready.pdf
