@@ -20,7 +20,7 @@ This cycle obviously has a negative net effect on me, because I never learn anyt
 
 To combat this increasingly negative pattern, I've set up some simple rules for myself.
 
-1. I only subscribe to newsletters that are weekly at a minimum.
+1. I only subscribe to newsletters that have a weekly (or longer) release schedule.
 2. I keep the email marked as unread until I actually read (or at least skim) the message body.
 3. Any interesting links, I open in separate tabs to go through gradually throughout the day.
 4. If I fail to do steps 2 and 3 for three consecutive weeks, or if I am even slightly unimpressed with the content, then I unsubscribe immediately.
