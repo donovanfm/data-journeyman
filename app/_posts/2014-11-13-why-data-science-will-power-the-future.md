@@ -6,6 +6,7 @@ thumbnail: question-logo.png
 tags: 
   - Data Analysis
   - Video
+  - Data Expert
 ---
 
 ###The Who and The What

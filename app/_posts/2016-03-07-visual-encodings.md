@@ -5,6 +5,7 @@ blurb: "Visual encodings are the building blocks of data visualizations, so befo
 thumbnail: eye-logo.png
 tags: 
   - Visualization
+  - Theory
 ---
 
 In my [last post](http://www.datajourneyman.com/2016/02/29/data-visualization.html), I gave a high-level introduction to data visualization. Now it's time to dig deep into some of the more "nuts and bolts" aspects of data visualization, specifically, visual encodings, which are like the atomic particles of data visualization, and just like physical atoms come together to form the molecules we interact with daily, visual encodings can be combined to create graphs.

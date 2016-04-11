@@ -51,5 +51,11 @@
 		&.Visualization {
 			background-color: rgba(40, 240, 240, 0.6);
 		}
+		&.Data.Expert {
+			background-color: rgba(1800, 120, 40, 0.8);
+		}
+		&.Theory {
+			background-color: rgba(139,0,139, 0.5);
+		}
 	}
 }

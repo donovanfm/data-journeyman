@@ -5,6 +5,7 @@ blurb: "Tying together concepts from the past three posts, the principals of pre
 thumbnail: scatter-brain-dark-logo.png
 tags: 
   - Visualization
+  - Theory
 ---
 
 ###Visualization Recap

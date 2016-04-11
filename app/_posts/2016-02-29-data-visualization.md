@@ -5,6 +5,7 @@ blurb: "This introductory post to data visualization will be the first of a seve
 thumbnail: bar-graph-logo.png
 tags: 
   - Visualization
+  - Theory
 ---
 
 ###Visualization, Why?
