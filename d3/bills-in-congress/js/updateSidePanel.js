@@ -1,19 +1,3 @@
-function ordinalSuffixOf(i) {
-	i = parseInt(i)
-    var j = i % 10,
-        k = i % 100;
-    if (j == 1 && k != 11) {
-        return i + "st";
-    }
-    if (j == 2 && k != 12) {
-        return i + "nd";
-    }
-    if (j == 3 && k != 13) {
-        return i + "rd";
-    }
-    return i + "th";
-}
-
 function updateSidePanel(data) {
 	d3.select(".house-members").selectAll(".member-box").remove();
 	d3.select(".senate-members").selectAll(".member-box").remove();

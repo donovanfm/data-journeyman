@@ -1,73 +1,5 @@
 function updateChart(billData, sizeConfig){ 
 
-  // Gotten from http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-
-  function getBillPercentage(barData, decimalPlaces) {
-    var percentage = _.last(barData).billCount / _.first(barData).billCount * 100;
-    var roundedPercentage = Math.round(percentage * Math.pow(10, decimalPlaces)) / Math.pow(10, decimalPlaces)
-    return roundedPercentage ;
-  }
-
-  // Gotten (and modified) from https://bl.ocks.org/mbostock/7555321
-  function wrap(text, width) {
-    var words = text.text().split(/\s+/).reverse(),
-      word,
-      line = [],
-      lineNumber = 0,
-      lineHeight = 1.1, // ems
-      x = text.attr("x")
-      y = text.attr("y"),
-      dy = parseFloat(text.attr("dy")),
-      tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
-
-    while (word = words.pop()) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > width) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-      }
-    }
-  }
-
-  // Gotten from http://bl.ocks.org/alexhornbake/6005176
-  //returns path string d for <path d="This string">
-  //a curly brace between x1,y1 and x2,y2, w pixels wide 
-  //and q factor, .5 is normal, higher q = more expressive bracket 
-  function makeCurlyBrace(x1,y1,x2,y2,w,q)
-  {
-    //Calculate unit vector
-    var dx = x1-x2;
-    var dy = y1-y2;
-    var len = Math.sqrt(dx*dx + dy*dy);
-    dx = dx / len;
-    dy = dy / len;
-
-    //Calculate Control Points of path,
-    var qx1 = x1 + q*w*dy;
-    var qy1 = y1 - q*w*dx;
-    var qx2 = (x1 - .25*len*dx) + (1-q)*w*dy;
-    var qy2 = (y1 - .25*len*dy) - (1-q)*w*dx;
-    var tx1 = (x1 -  .5*len*dx) + w*dy;
-    var ty1 = (y1 -  .5*len*dy) - w*dx;
-    var qx3 = x2 + q*w*dy;
-    var qy3 = y2 - q*w*dx;
-    var qx4 = (x1 - .75*len*dx) + (1-q)*w*dy;
-    var qy4 = (y1 - .75*len*dy) - (1-q)*w*dx;
-
-    return ( "M " +  x1 + " " +  y1 +
-          " Q " + qx1 + " " + qy1 + " " + qx2 + " " + qy2 + 
-            " T " + tx1 + " " + ty1 +
-            " M " +  x2 + " " +  y2 +
-            " Q " + qx3 + " " + qy3 + " " + qx4 + " " + qy4 + 
-            " T " + tx1 + " " + ty1 );
-  }
-
   sizeConfig = sizeConfig || {};
   var margin = sizeConfig.margin || 75;
   var width = sizeConfig.width || 1400 - margin;
@@ -103,8 +35,8 @@ function updateChart(billData, sizeConfig){
     "Became Law"
   ]
 
+  // Sum bill data so the chart can display total bills in each stage of legislation
   var data = [];
-
   _.each(billStages, function(stage){
     data.push({
       stage: stage,
@@ -112,10 +44,13 @@ function updateChart(billData, sizeConfig){
     });
   });
 
+  // Set default maxBarHeight if not specified in sizeConfig
   maxBarHeight = maxBarHeight || _.find(data, {'stage': 'Introduced'}).billCount;
 
+  // Remove previos svg is updateChart was called previously
   d3.select(".chart-container").select("svg").remove();
 
+  // Initialize new svg to be drawn
   svg = d3.select(".chart-container")
     .append("svg")
       .attr("width", width + margin)
@@ -129,13 +64,11 @@ function updateChart(billData, sizeConfig){
     .domain(displayedBillStages);
 
   // Create y-axis scale mapping bill counts -> pixels
-  // var bill_scale = d3.scale.pow().exponent(.6)
   var bill_scale = d3.scale.linear()
     .range([height, margin])
-    // .domain([0, _.find(data, {"stage": "Introduced"}).billCount]);
-    // .domain([0, 24000]);
     .domain([0, _.find(yAxisHeights, function(h) { return h > maxBarHeight })]);
 
+  // Create axes
   var stage_axis = d3.svg.axis()
     .scale(stage_scale)
     .orient("bottom")
@@ -144,6 +77,7 @@ function updateChart(billData, sizeConfig){
     .scale(bill_scale)
     .orient("left");
 
+  // Draw the axes, and if necessary, rotate the x axis labels (for small screens)
   svg
     .append("g")
     .attr("class", "x axis")
@@ -154,7 +88,6 @@ function updateChart(billData, sizeConfig){
     svg.select(".x.axis").selectAll("text")
       .attr("y", 0)
       .attr("x", 9)
-      // .attr("dy", ".35em")
       .attr("transform", "rotate(90)")
       .style("text-anchor", "start");
   }
@@ -166,8 +99,10 @@ function updateChart(billData, sizeConfig){
     .attr("transform", "translate(" + margin + ",0)")
     .call(bill_axis);
 
+  // Filter out just the data needed for the visualization
   var barData = _.filter(data, function(d) { return _.includes(displayedBillStages, d.stage) });
 
+  // Draw the bill count bars
   svg.selectAll(".bar")
     .data(barData)
   .enter().append("rect")
@@ -181,6 +116,7 @@ function updateChart(billData, sizeConfig){
     .attr("height", function(d) { return height - bill_scale(d.billCount); })
     .duration(barTransitionDuration).delay(function(d, i){ return i*(barTransitionDuration+slopeTransitionDuration); })
     
+  // Draw bill counts on top of the bars
   svg.selectAll(".bill-count-text")
     .data(barData)
   .enter().append("text")
@@ -192,6 +128,8 @@ function updateChart(billData, sizeConfig){
     .transition().delay(function(d, i){ return barTransitionDuration + i*(barTransitionDuration+slopeTransitionDuration)})
     .text(function(d) { return numberWithCommas(d.billCount) + " bills"; });
 
+  // Draw connecting lines between adjacent bars to show downward trend 
+  // (actually uses polygons to fill the space below the line with color)
   _.each(_.range(barData.length-1), function(i){
     svg.append("polygon")
       .attr("class", "slope")
@@ -212,6 +150,7 @@ function updateChart(billData, sizeConfig){
       .duration(slopeTransitionDuration).delay(barTransitionDuration+(barTransitionDuration+slopeTransitionDuration)*i);
   });
 
+  // Draw the percentage total bar on the right of the graph to show a reference to the total bills introduced
   svg.append("rect")
     .attr("class", "percentage-total")
     .attr("x", stage_scale(_.last(displayedBillStages)) * 1.2)
@@ -223,6 +162,7 @@ function updateChart(billData, sizeConfig){
     .attr("height", height - bill_scale(_.first(barData).billCount))
     .duration(1).delay(displayedBillStages.length*(barTransitionDuration+slopeTransitionDuration))
 
+  // Fill in the appropriate percentage of the percentage total bar to show the total bills that became law
   svg.append("rect")
     .attr("class", "percentage-passed")
     .attr("x", stage_scale(_.last(displayedBillStages)) * 1.2)
@@ -234,6 +174,7 @@ function updateChart(billData, sizeConfig){
     .attr("height", height - bill_scale(_.last(barData).billCount))
     .duration(1).delay(displayedBillStages.length*(barTransitionDuration+slopeTransitionDuration))
 
+  // Draw text to show quantitative percentage of bills that became law
   svg.append("text")
     .attr("class", "percentage-text")
     .attr("x", stage_scale(_.last(displayedBillStages)) * 1.195 - 160 )
@@ -246,6 +187,7 @@ function updateChart(billData, sizeConfig){
     .attr("fill", "#444")
     .delay(displayedBillStages.length*(barTransitionDuration+slopeTransitionDuration))
 
+  // Connect the percentage bars with the percentage text by drawing a curly brace between them
   svg.append("path")
     .attr("class","curlyBrace")
     .attr("d", function(d) { 

@@ -1,6 +1,8 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><!-- Third Party JS and CSS --><script src=lib/js/d3.v3.min.js></script><script src=lib/js/lodash.min.js></script><link rel=stylesheet type=text/css href=lib/css/bootstrap.min.css><!-- End Third Party JS and CSS --><!-- Project JS and CSS --><script src=js/updateSidePanel.js></script><script src=js/updateChart.js></script><link rel=stylesheet type=text/css href=css/header.css><link rel=stylesheet type=text/css href=css/side-panel.css><link rel=stylesheet type=text/css href=css/chart.css><!-- End Project JS and CSS --><script type=text/javascript>"use strict";
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><!-- Third Party JS and CSS --><script src=lib/js/d3.v3.min.js></script><script src=lib/js/lodash.min.js></script><link rel=stylesheet type=text/css href=lib/css/bootstrap.min.css><!-- End Third Party JS and CSS --><!-- Project JS and CSS --><script src=js/utils.js></script><script src=js/updateSidePanel.js></script><script src=js/updateChart.js></script><link rel=stylesheet type=text/css href=css/header.css><link rel=stylesheet type=text/css href=css/side-panel.css><link rel=stylesheet type=text/css href=css/chart.css><!-- End Project JS and CSS --><script type=text/javascript>"use strict";
 
       function draw(error, data) {
+
+        // The update function updates any part of the visualization that is data dependent
         function update(congressNumber, party) {
           var chartFilter = {congress: ""+congressNumber};
           if (party) { chartFilter.party = party; }
@@ -23,6 +25,7 @@
         var currentParty;
         var sidePanelShown = false;
 
+        // Set up side panel toggle button behavior to show/hide side panel
         d3.select('.toggle-side-panel').on('click', function(){
           if (sidePanelShown) {
             d3.select('.side-panel')
@@ -46,6 +49,7 @@
           );
         })
 
+        // Populate the Congress selector
         d3.select('#congress-select').selectAll('option')
           .data(congresses)
         .enter().append('option')
@@ -55,11 +59,13 @@
             return ordinalSuffixOf(congress) + " Congress (" + congressData.beginYear + "-" + congressData.endYear + ")";
           });
 
+        // Set up the Congress selector behavior
         d3.selectAll('#congress-select').on('change', function() {
           currentCongress = d3.select(this).property('value');
           update(currentCongress, currentParty);
         });
 
+        // Set up the party filter checkboxes behavior
         d3.selectAll('input[name="party-select"]').on('click', function(__, index) {
           if (index == 0) {
             currentParty = undefined;
