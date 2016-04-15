@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Third Party JS and CSS -->
+    <script src="lib/js/d3.v3.min.js"></script>
+    <script src="lib/js/lodash.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <!-- End Third Party JS and CSS -->
+    
+    <!-- Project JS and CSS -->
+    <script src="js/updateSidePanel.js"></script>
+    <script src="js/updateChart.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/side-panel.css">
+    <link rel="stylesheet" type="text/css" href="css/chart.css">
+    <!-- End Project JS and CSS -->
+
+    <script type="text/javascript">
+      "use strict";
+
+      function draw(error, data) {
+        function update(congressNumber, party) {
+          var chartFilter = {congress: ""+congressNumber};
+          if (party) { chartFilter.party = party; }
+          if (_.isFunction(party)) { chartFilter = party; }
+          updateChart(_.filter(data['bill-data'], chartFilter), {
+            width: window.innerWidth > 1250 ? window.innerWidth - 450 : window.innerWidth > 1150 ? window.innerWidth - 300 : window.innerWidth - 100,
+            billCountTextSize: window.innerWidth > 1850 ? 26 : window.innerWidth > 1700 ? 24 : window.innerWidth > 1600 ? 20 : window.innerWidth > 1440 ? 16 : window.innerWidth > 550 ? 14 : 0,
+            barLetterPadding: window.innerWidth > 1050 ? 5 : 0,
+            rotateXAxisLabels: window.innerWidth > 950 ? false : true
+          });
+          updateSidePanel(_.extend(
+            _.find(data['congress-data'], {congress: ""+congressNumber}),
+            _.find(data['president-data'], function(d) { return _.includes(d.congresses, ""+congressNumber); })
+          ));
+        }
+
+        var congresses = _.chain(data['congress-data']).map('congress').sortBy(parseInt).reverse().value();
+        var currentCongress = _.first(congresses);
+        var currentParty;
+        var sidePanelShown = false;
+
+        d3.select('.toggle-side-panel').on('click', function(){
+          if (sidePanelShown) {
+            d3.select('.side-panel')
+              .classed('col-md-2', false)
+              .classed('col-md-0', true)
+            d3.select('.main-panel')
+              .classed('col-md-10', false)
+              .classed('col-md-12', true)
+          } else {
+            d3.select('.side-panel')
+              .classed('col-md-0', false)
+              .classed('col-md-2', true)
+            d3.select('.main-panel')
+              .classed('col-md-12', false)
+              .classed('col-md-10', true)
+          }
+          sidePanelShown = !sidePanelShown
+          d3.select(this).html(sidePanelShown ? 
+            '<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Hide Congress Details' : 
+            '<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Show Congress Details'
+          );
+        })
+
+        d3.select('#congress-select').selectAll('option')
+          .data(congresses)
+        .enter().append('option')
+          .attr('value', _.identity)
+          .text(function(congress) {
+            var congressData = _.find(data['congress-data'], {congress: ""+congress});
+            return ordinalSuffixOf(congress) + " Congress (" + congressData.beginYear + "-" + congressData.endYear + ")";
+          });
+
+        d3.selectAll('#congress-select').on('change', function() {
+          currentCongress = d3.select(this).property('value');
+          update(currentCongress, currentParty);
+        });
+
+        d3.selectAll('input[name="party-select"]').on('click', function(__, index) {
+          if (index == 0) {
+            currentParty = undefined;
+          } else if (index == 1) {
+            currentParty = 'Republican';
+          } else if (index == 2) {
+            currentParty = 'Democratic';
+          } else if (index == 3) {
+            //TODO: check math for independent bills
+            currentParty = function(d) { 
+              return d.congress === ""+currentCongress && (d.party === 'Independent' || d.party === 'Independent+Democrat'); 
+            }
+          }
+          update(currentCongress, currentParty);
+          d3.select('.chart-container')
+            .classed('rep', index == 1)
+            .classed('dem', index == 2)
+            .classed('ind', index == 3);
+        });
+
+        //update whenever the window is resized
+        window.onresize = function(){ update(currentCongress, currentParty); };
+
+        // initialize everything to the lastest congress in the dataset
+        update(currentCongress);
+      };
+
+    </script>
+  </head>
+<body>
+  <script type="text/javascript">
+    d3.json("data/data.json", draw);
+  </script>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-0 side-panel">
+        <h2 id="side-panel-title"></h2>
+        <hr>
+        <img src="img/chamber-thick.png" class="chamber">
+        <h3>Legislative Branch</h3>
+        <div class="info-box">
+          <h4>House of Representatives</h4>
+          <h5 id="house-rep" class="rep-label"></h5>
+          <h5 id="house-dem" class="dem-label"></h5>
+          <h5 id="house-ind" class="ind-label"></h5>  
+          <div class="house-members"></div>
+        </div>     
+        <div class="info-box"> 
+          <h4>Senate</h4>
+          <h5 id="senate-rep" class="rep-label"></h5>
+          <h5 id="senate-dem" class="dem-label"></h5>
+          <h5 id="senate-ind" class="ind-label"></h5>
+          <div class="senate-members"></div>
+        </div>
+        <hr>
+        <img src="img/president.png" class="president">
+        <h3>Executive Branch</h3>
+        <div class="info-box"> 
+          <h4>President</h4>
+          <h5 id="president-name"></h5>
+        </div>
+      </div>
+      <div class="col-md-12 col-xs-12 main-panel">
+        <div class="header">
+
+          <h2 class="title">U.S. Legislative Process</h2>
+          <p class="subtitle">A look at how many bills make it through different stages of the United States Legislative Process.</p>
+          <a class="toggle-side-panel btn btn-primary"><span class="glyphicon glyphicon-menu-right"></span> Show Congress Details</a>
+          <div class="controls">
+            <div class="congress-controls">
+              <span class="select-congress control-label">Select Congress: </span>
+              <span class="mdl-selectfield"><select id="congress-select"></select></span>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+
+          <div class="chart-container"></div>
+          <div class="controls">
+            <div class="party-controls">
+              <div class="party-filter control-label">Filter by Party Sponsorship:</div>
+              <div>
+                <nobr>
+                  <span class="all-label"><input type="radio" name="party-select" id="party-all" checked> All</span>
+                  <span class="rep-label"><input type="radio" name="party-select" id="party-rep"> Republican</span>
+                </nobr>
+                <nobr>
+                  <span class="dem-label"><input type="radio" name="party-select" id="party-dem"> Democrat</span>
+                  <span class="ind-label"><input type="radio" name="party-select" id="party-ind"> Independent</span>
+                </nobr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+  

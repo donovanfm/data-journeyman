@@ -1,0 +1,76 @@
+@media (max-width: 1150px) {
+	.side-panel {
+		display: none;
+	}
+}
+
+.col-md-0 {
+	display: none;
+}
+
+.side-panel {
+	border-right: 1px solid #ccc;
+	text-align: center;
+}
+
+.side-panel img.chamber {
+	width: 80%;
+}
+
+.side-panel img.president {
+	width: 60%;
+}
+
+.side-panel h5 {
+	font-size: 16px;
+}
+
+.side-panel .info-box {
+	border: 1px solid #bbb;
+	border-radius: 15px;
+	margin-bottom: 10px;
+}
+
+.side-panel .rep-label {
+	color: rgb(200, 0, 0);
+}
+
+.side-panel .dem-label {
+	color: rgb(0, 0, 200);
+}
+
+.side-panel .ind-label {
+	color: orange;
+}
+
+.side-panel .house-members {
+	text-align: left;
+	padding: 10px 15px;
+	padding-top: 0;
+	line-height: 0.3;
+}
+
+.side-panel .senate-members {
+	text-align: left;
+	padding: 10px 43px;
+	padding-top: 0;
+	line-height: 0.3;
+}
+
+.side-panel .member-box {
+	display: inline-block;
+	height: 5px;
+	width: 5px;
+}
+
+.side-panel .member-box.rep {
+	background-color: rgb(200, 0, 0);
+}
+
+.side-panel .member-box.dem {
+	background-color: rgb(0, 0, 200);
+}
+
+.side-panel .member-box.ind {
+	background-color: orange;
+}
