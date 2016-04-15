@@ -1,0 +1,150 @@
+.content .toggle-side-panel {
+	font-size: 16px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.y.axis line, .y.axis path, .x.axis line, .x.axis path {
+   fill: none;
+   stroke: #666;
+   stroke-width: 1.0;
+}
+.x.axis line {
+	stroke: white;
+}
+
+.chart-container {
+	text-align: center;
+}
+
+.chart-container .slope {
+    stroke: rgb(140, 20, 200);
+    fill: rgba(140, 20, 200, 0.2);
+}
+
+.chart-container .bar {
+    stroke: rgb(140, 20, 200);
+    fill: rgb(140, 20, 200);
+}
+
+.chart-container .bill-count-text {
+    fill: rgb(140, 20, 200);
+}
+
+.chart-container.rep .slope {
+    stroke: rgb(200, 0, 0);
+    fill: rgba(225, 0, 0, 0.2);
+}
+
+.chart-container.rep .bar {
+    stroke: rgb(200, 0, 0);
+    fill: rgb(200, 0, 0);
+}
+
+.chart-container.rep .bill-count-text {
+    fill: rgb(200, 0, 0);
+}
+
+.chart-container.dem .slope {
+    stroke: rgb(0, 0, 200);
+    fill: rgba(0, 0, 200, 0.2);
+}
+
+.chart-container.dem .bar {
+    stroke: rgb(0, 0, 200);
+    fill: rgb(0, 0, 200);
+}
+
+.chart-container.dem .bill-count-text {
+    fill: rgb(0, 0, 200);
+}
+
+.chart-container.ind .slope {
+    stroke: orange;
+    fill: rgba(255, 165, 0, 0.2);
+}
+
+.chart-container.ind .bar {
+    stroke: orange;
+    fill: orange;
+}
+
+.chart-container.ind .bill-count-text {
+    fill: orange;
+}
+
+.content .chart-container .percentage-text {
+	font-size: 16px;
+}
+
+.content .chart-container .percentage-total {
+	stroke: #444;
+	storke-width: 1px;
+	fill: none;
+}
+
+.content .chart-container .percentage-passed {
+	stroke: #444;
+	storke-width: 1px;
+	fill: rgb(140, 20, 200);
+}
+
+.content .chart-container.rep .percentage-passed {
+	fill: rgb(200, 0, 0);
+}
+
+.content .chart-container.dem .percentage-passed {
+	fill: rgb(0, 0, 200);
+}
+
+.content .chart-container.ind .percentage-passed {
+	fill: orange;
+}
+
+.content .chart-container .curlyBrace {
+	stroke: #000000;
+	fill: none;
+}
+
+.content .controls {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.content .controls .control-label {
+	font-weight: bold;
+}
+
+.content .controls input[type="radio"] {
+	margin-left: 13px;
+    width: 1em;
+    height: 1em;
+}
+
+.content .party-controls {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 18px;
+	padding-top: 10px;
+	margin-bottom: 40px;
+}
+
+.content .party-controls .party-filter.control-label {
+	font-size: 20px;
+}
+
+.content .party-controls .all-label {
+	color: rgb(140, 20, 200);
+}
+
+.content .party-controls .rep-label {
+	color: rgb(200, 0, 0);
+}
+
+.content .party-controls .dem-label {
+	color: rgb(0, 0, 200);
+}
+
+.content .party-controls .ind-label {
+	color: orange;
+}

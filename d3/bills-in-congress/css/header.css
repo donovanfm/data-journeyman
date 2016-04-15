@@ -1,0 +1,102 @@
+@media (max-width: 1150px) {
+	.toggle-side-panel {
+		display: none;
+	}
+}
+
+.header {
+	border-bottom: 1px solid #ccc;
+}
+
+.header .toggle-side-panel {
+	font-size: 16px;
+	position: absolute;
+}
+
+.header a.toggle-side-panel:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.header .title, .header .subtitle {
+    text-align: center;
+}
+
+.header .subtitle {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.header .controls {
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: 10px;
+}
+
+.header .controls .control-label {
+	font-weight: bold;
+}
+
+.header .congress-controls {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 35px;
+	font-size: 24px;
+}
+
+/* Start Google Material Design Drop Down CSS */
+
+/* Style Select Field */
+select {
+  width: 265px;
+  margin-left: 15px;
+  font-family: inherit;
+  background-color: transparent;
+  padding: 4px 0;
+  padding-top: 0;
+  font-size: 18px;
+  color: rgba(0,0,0, 0.8);
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #337ab7;
+  color: #337ab7;
+}
+
+/* Remove focus */
+select:focus {
+  outline: none;
+}
+
+/* Hide label */
+.mdl-selectfield label {
+  display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.mdl-selectfield {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+  vertical-align: middle;
+}
+.mdl-selectfield:after {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: 0.375em solid #337ab7;
+  pointer-events: none;
+}
+
+/* End Google Material Design Drop Down CSS*/
