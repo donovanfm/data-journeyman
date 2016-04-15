@@ -76,10 +76,11 @@ function updateChart(billData, sizeConfig){
   var barLetterPadding = sizeConfig.barLetterPadding || 5; //pixels
   var billCountTextSize = sizeConfig.billCountTextSize || 0;
   var rotateXAxisLabels = sizeConfig.rotateXAxisLabels || false;
+  var maxBarHeight = sizeConfig.maxBarHeight; // default value defined below
 
   var barTransitionDuration = 100;
   var slopeTransitionDuration = 200;
-  var yAxisHeights = [10, 50, 100, 250, 500, 1000, 2000, 4000, 6000, 12000, 24000];
+  var yAxisHeights = [10, 50, 100, 250, 500, 1000, 2000, 4000, 6000, 12000, 18000, 24000];
 
   var billStages = [
     "Introduced", 
@@ -111,6 +112,8 @@ function updateChart(billData, sizeConfig){
     });
   });
 
+  maxBarHeight = maxBarHeight || _.find(data, {'stage': 'Introduced'}).billCount;
+
   d3.select(".chart-container").select("svg").remove();
 
   svg = d3.select(".chart-container")
@@ -131,7 +134,7 @@ function updateChart(billData, sizeConfig){
     .range([height, margin])
     // .domain([0, _.find(data, {"stage": "Introduced"}).billCount]);
     // .domain([0, 24000]);
-    .domain([0, _.find(yAxisHeights, function(h) { return h > _.find(data, {'stage': 'Introduced'}).billCount; })]);
+    .domain([0, _.find(yAxisHeights, function(h) { return h > maxBarHeight })]);
 
   var stage_axis = d3.svg.axis()
     .scale(stage_scale)

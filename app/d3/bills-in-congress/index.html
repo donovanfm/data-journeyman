@@ -30,7 +30,8 @@
             width: window.innerWidth > 1250 ? window.innerWidth - 450 : window.innerWidth > 1150 ? window.innerWidth - 300 : window.innerWidth - 100,
             billCountTextSize: window.innerWidth > 1850 ? 26 : window.innerWidth > 1700 ? 24 : window.innerWidth > 1600 ? 20 : window.innerWidth > 1440 ? 16 : window.innerWidth > 550 ? 14 : 0,
             barLetterPadding: window.innerWidth > 1050 ? 5 : 0,
-            rotateXAxisLabels: window.innerWidth > 950 ? false : true
+            rotateXAxisLabels: window.innerWidth > 950 ? false : true,
+            maxBarHeight: _.chain(data['bill-data']).filter({congress: ""+congressNumber}).map('stages.Introduced').sum().value()
           });
           updateSidePanel(_.extend(
             _.find(data['congress-data'], {congress: ""+congressNumber}),
@@ -168,14 +169,10 @@
             <div class="party-controls">
               <div class="party-filter control-label">Filter by Party Sponsorship:</div>
               <div>
-                <nobr>
-                  <span class="all-label"><input type="radio" name="party-select" id="party-all" checked> All</span>
-                  <span class="rep-label"><input type="radio" name="party-select" id="party-rep"> Republican</span>
-                </nobr>
-                <nobr>
-                  <span class="dem-label"><input type="radio" name="party-select" id="party-dem"> Democrat</span>
-                  <span class="ind-label"><input type="radio" name="party-select" id="party-ind"> Independent</span>
-                </nobr>
+                <nobr><span class="all-label"><input type="radio" name="party-select" id="party-all" checked> All</span></nobr>
+                <nobr><span class="rep-label"><input type="radio" name="party-select" id="party-rep"> Republican</span></nobr>
+                <nobr><span class="dem-label"><input type="radio" name="party-select" id="party-dem"> Democrat</span></nobr>
+                <!-- <nobr><span class="ind-label"><input type="radio" name="party-select" id="party-ind"> Independent</span></nobr> -->
               </div>
             </div>
           </div>
