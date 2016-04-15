@@ -100,8 +100,14 @@
             .classed('ind', index == 3);
         });
 
-        //update whenever the window is resized
-        window.onresize = function(){ update(currentCongress, currentParty); };
+        //update whenever the window is resized (have to use cachedWidth for mobile browsers)
+        var cachedWidth = window.innerWidth;
+        window.onresize = function(){ 
+          if(window.innerWidth !== cachedWidth){
+            update(currentCongress, currentParty); 
+            cachedWidth = window.innerWidth;
+          }
+        };
 
         // initialize everything to the lastest congress in the dataset
         update(currentCongress);
