@@ -11,7 +11,7 @@ As I've written about previously, I'm currenlty enrolled in Udacity's Data Analy
 
 [See it in action.](http://www.datajourneyman.com/d3/bills-in-congress/)
 
-![Screenshot of the U.S. Legislative Process Visualization](https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-final.png)
+<img alt="Screenshot of the U.S. Legislative Process Visualization" src="https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-final.png" class="full-size">
 
 ###Summary
 
@@ -30,31 +30,31 @@ I went through several design iterations before settling on the general layout o
 
 My first idea was to lay out the different governing entities spatially, and show the progression of bills as they pass through those entities. Ultimately, I felt like this wasn't the most straightforward way to tell the two data stories above, and I also found [another visualization](http://legex.org/process/index.html) that already does a similar thing.
 
-![Visualization Sketch 1](https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-1.png)
+<img alt="Visualization Sketch 1" src="https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-1.png" class="full-size">
 
 ####Design Stage 2
 
 I then switched to a new layout that showed a histogram of bills at different stages of the legislative process. I also added some details about the current Congress to provide context for the viewer.
 
-![Visualization Sketch 2](https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-2.png)
+<img alt="Visualization Sketch 2" src="https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-2.png" class="full-size">
 
 ####Design Stage 3
 
 The next iteration only had minor changes. I moved the Congress detail to the left and separated the bars from each other, connecting them with a slope line to put more emphasis on the drop in the number of bills at each stage.
 
-![Visualization Sketch 3](https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-3.png)
+<img alt="Visualization Sketch 3" src="https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-3.png" class="full-size">
 
 ####Design Stage 4
 
 Then, to show the changes within each party better, I unstacked the bar chart, splitting it into 3 charts. This helps the viewer see how many bills failed at each stage by party, since the bill counts are encoded by length and y position instead of just length, like it is in the stacked bar chart of Stage 3.
 
-![Visualization Sketch 4](https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-4.png)
+<img alt="Visualization Sketch 4" src="https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-4.png" class="full-size">
 
 ####Design Stage 5
 
 The main change I made at this stage of my ideation was to allow the viewer to control which party was displayed, so that only one chart has to be displayed at a time. This reduces visual clutter and allows the chart to be bigger.
 
-![Visualization Sketch 5](https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-5.png)
+<img alt="Visualization Sketch 5" src="https://raw.githubusercontent.com/dfmcmurray/data-journeyman/master/app/d3/bills-in-congress/img/viz-stage-5.png" class="full-size">
 
 ###Feedback
 
