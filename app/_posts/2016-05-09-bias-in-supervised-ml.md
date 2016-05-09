@@ -2,7 +2,7 @@
 layout: post
 title: "Bias in Supervised Machine Learning"
 blurb: "Algorithmic bias can pop up in unexpected places if you don't safeguard against it."
-thumbnail: logo.jpeg
+thumbnail: data-bias-logo.png
 tags: 
   - Ethics
   - Video
