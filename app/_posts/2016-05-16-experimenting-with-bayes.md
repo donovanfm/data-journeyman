@@ -2,7 +2,7 @@
 layout: post
 title: "Experimenting with Bayes"
 blurb: "The kind of statistics that have been covered in previous posts has mostly been Frequentist statistics. This post goes into the basics of Bayesian statistics with a look at experimental design."
-thumbnail: beaker-logo.jpeg
+thumbnail: beaker-logo.png
 tags: 
   - Bayesian
   - Statistics
