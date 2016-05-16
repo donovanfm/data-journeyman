@@ -2,7 +2,7 @@
 layout: post
 title: "Numeric Calculation Workflow"
 blurb: "A Data Scientist is often concerned with optimization problems, so when I find a great workflow for getting a task done efficiently, I immediately want to incorporate it into my process."
-thumbnail: calculation-logo.jpeg
+thumbnail: calculation-logo.png
 tags: 
   - Tools and Resources
 ---
