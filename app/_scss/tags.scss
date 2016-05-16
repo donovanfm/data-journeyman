@@ -57,5 +57,11 @@
 		&.Theory {
 			background-color: rgba(139,0,139, 0.5);
 		}
+		&.Bayesian {
+			background-color: rgba(150, 240, 180, 0.5);
+		}
+		&.Research.Paper {
+			background-color: rgba(240, 180, 255, 0.5);
+		}
 	}
 }
