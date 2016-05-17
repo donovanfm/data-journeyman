@@ -7,7 +7,6 @@ tags:
   - Bayesian
   - Statistics
   - Research Paper
-  - Tools and Resources
 ---
 
 Science isn't perfect.
