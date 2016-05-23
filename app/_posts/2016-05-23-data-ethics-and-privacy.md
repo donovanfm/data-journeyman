@@ -16,13 +16,13 @@ tags:
 
 "Not all users are at the same risk...The same tools that create some moderate risk otherwise create some serious risks in specific contexts. Risk isn't distributed equally."
 
-<div class="pull-quote">"[There is] a common fallacy where [you think] reducing the friction around accessing some fact from a dataset or kind of increasing the voracity of it, because it's already technically out there, you haven't taken an act."</div>
+"[There is] a common fallacy where [you think] reducing the friction around accessing some fact from a dataset or kind of increasing the voracity of it, because it's already technically out there, you haven't taken an act."
 
 "If you have individuals who are trying to navigate the complex social space of protecting themselves or people they care about, or whatever is the set of things they're worried about, the calculations they make are made on the basis of they have certain resources, they have certain outcomes, their adversaries have certain resources and outcomes, and it's all this kind of balancing act that's very much driven by friction."
 
 <div class="pull-quote">"One of the reasons why journalism is a profession is that they are in the business of thinking about and understanding the structures around these kinds of ethics."</div>
 
-<div class="pull-quote">"This is something that happens again and again, that reidentification is really breathtakingly easy."</div>
+"This is something that happens again and again, that reidentification is really breathtakingly easy."
 
 "Even with consent, figuring out what you can pull out of [data] is hard. That's the next big thing, ensuring that when I give consent, what am I giving consent to? Am I giving consent to my anonymous ride data being used in a way that exposes something about the geography of the city? Maybe. Am I giving consent for my home address to be released once I'm deanonymized? Absolutely not. But the problem is that if we don't understand what we can pull of out this, we don't know what we're consenting to."
 
