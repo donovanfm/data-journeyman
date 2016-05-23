@@ -10,6 +10,8 @@ tags:
 
 [Eleanor Saitta](https://dymaxion.org/me.html), the new Security Architect at Etsy, was on one of my favorite podcasts this week, [Data Stories](http://datastori.es). In [the episode](http://datastori.es/74-data-ethics-and-privacy-with-eleanor-saitta/), she talks about the trade off between open data and privacy that I touched on in a previous post titled [Transparency versus Privacy](http://www.datajourneyman.com/2016/02/21/transparency-versus-privacy.html). There were so many gems in this podcast episode that I decided to jot down some of my favorite quotes of Eleanor's, which I've reproduced here.
 
+<hr>
+
 <div class="pull-quote">"In general, my work over that past 13, 14 years now has concentrated on the places where security rises above the machine."</div>
 
 "Not all users are at the same risk...The same tools that create some moderate risk otherwise create some serious risks in specific contexts. Risk isn't distributed equally."
