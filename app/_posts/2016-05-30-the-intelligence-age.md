@@ -8,7 +8,7 @@ tags:
   - Future
 ---
 
-Almost 8 years ago, there was a post on Wired called [The End of Theory: The Data Deluge that Makes the Scientific Method Obsolete](http://www.wired.com/2008/06/pb-theory/). In that article, [Chris Anderson] (https://en.m.wikipedia.org/wiki/Chris_Anderson_(writer\)), who frequently considered [the long view](http://www.longtail.com/about.html) of technology's impact on humanity, gives the following digital history.
+Almost 8 years ago, there was a post on Wired called [The End of Theory: The Data Deluge that Makes the Scientific Method Obsolete](http://www.wired.com/2008/06/pb-theory/). In that article, [Chris Anderson](https://en.m.wikipedia.org/wiki/Chris_Anderson_(writer)), who frequently considered [the long view](http://www.longtail.com/about.html) of technology's impact on humanity, gives the following digital history.
 
 > Sixty years ago, digital computers made information readable. Twenty years ago, the Internet made it reachable. Ten years ago, the first search engine crawlers made it a single database. Now Google and like-minded companies are sifting through the most measured age in history, treating this massive corpus as a laboratory of the human condition. They are the children of the Petabyte Age.
 
