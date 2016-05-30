@@ -5,6 +5,7 @@ blurb: "Human progress can often be grouped into phases, from the Stone Age to t
 thumbnail: scatter-brain-dark-logo.png
 tags: 
   - Data Analysis
+  - Future
 ---
 
 Almost 8 years ago, there was a post on Wired called [The End of Theory: The Data Deluge that Makes the Scientific Method Obsolete](http://www.wired.com/2008/06/pb-theory/). In that article, [Chris Anderson] (https://en.m.wikipedia.org/wiki/Chris_Anderson_(writer\)), who frequently considered [the long view](http://www.longtail.com/about.html) of technology's impact on humanity, gives the following digital history.
