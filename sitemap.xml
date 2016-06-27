@@ -1,279 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>/2016/06/27/simpsons-paradox.html</loc>
+    <lastmod>2016-06-27T00:00:00-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>/2016/06/20/local-data-projects.html</loc>
-    <lastmod>2016-06-20T00:00:00-07:00</lastmod>
+    <lastmod>2016-06-20T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/06/13/notes-from-visual-disp.html</loc>
-    <lastmod>2016-06-13T00:00:00-07:00</lastmod>
+    <lastmod>2016-06-13T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/06/06/data-in-civic-tech.html</loc>
-    <lastmod>2016-06-06T00:00:00-07:00</lastmod>
+    <lastmod>2016-06-06T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/05/30/the-intelligence-age.html</loc>
-    <lastmod>2016-05-30T00:00:00-07:00</lastmod>
+    <lastmod>2016-05-30T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/05/23/data-ethics-and-privacy.html</loc>
-    <lastmod>2016-05-23T00:00:00-07:00</lastmod>
+    <lastmod>2016-05-23T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/05/16/experimenting-with-bayes.html</loc>
-    <lastmod>2016-05-16T00:00:00-07:00</lastmod>
+    <lastmod>2016-05-16T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/05/09/bias-in-supervised-ml.html</loc>
-    <lastmod>2016-05-09T00:00:00-07:00</lastmod>
+    <lastmod>2016-05-09T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/05/02/numeric-calculation-workflow.html</loc>
-    <lastmod>2016-05-02T00:00:00-07:00</lastmod>
+    <lastmod>2016-05-02T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/04/25/omscs.html</loc>
-    <lastmod>2016-04-25T00:00:00-07:00</lastmod>
+    <lastmod>2016-04-25T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/04/18/us-legislative-process-visualization.html</loc>
-    <lastmod>2016-04-18T00:00:00-07:00</lastmod>
+    <lastmod>2016-04-18T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/04/11/four-visualization-lenses.html</loc>
-    <lastmod>2016-04-11T00:00:00-07:00</lastmod>
+    <lastmod>2016-04-11T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/04/04/newsletters.html</loc>
-    <lastmod>2016-04-04T00:00:00-07:00</lastmod>
+    <lastmod>2016-04-04T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/03/28/hemovis-a-visualization-case-study.html</loc>
-    <lastmod>2016-03-28T00:00:00-07:00</lastmod>
+    <lastmod>2016-03-28T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/03/21/preattentive-processing.html</loc>
-    <lastmod>2016-03-21T00:00:00-07:00</lastmod>
+    <lastmod>2016-03-21T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/03/14/color.html</loc>
-    <lastmod>2016-03-14T00:00:00-07:00</lastmod>
+    <lastmod>2016-03-14T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/03/07/visual-encodings.html</loc>
-    <lastmod>2016-03-07T00:00:00-08:00</lastmod>
+    <lastmod>2016-03-07T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/02/29/data-visualization.html</loc>
-    <lastmod>2016-02-29T00:00:00-08:00</lastmod>
+    <lastmod>2016-02-29T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/02/21/transparency-versus-privacy.html</loc>
-    <lastmod>2016-02-21T00:00:00-08:00</lastmod>
+    <lastmod>2016-02-21T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/02/15/uncertainty-in-data-science.html</loc>
-    <lastmod>2016-02-15T00:00:00-08:00</lastmod>
+    <lastmod>2016-02-15T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2016/02/08/being-scientifically-minded.html</loc>
-    <lastmod>2016-02-08T00:00:00-08:00</lastmod>
+    <lastmod>2016-02-08T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/11/23/correlation-nation.html</loc>
-    <lastmod>2015-11-23T00:00:00-08:00</lastmod>
+    <lastmod>2015-11-23T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/11/16/pivot.html</loc>
-    <lastmod>2015-11-16T00:00:00-08:00</lastmod>
+    <lastmod>2015-11-16T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/07/06/looking-ahead.html</loc>
-    <lastmod>2015-07-06T00:00:00-07:00</lastmod>
+    <lastmod>2015-07-06T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/06/15/set-theory-and-infinity.html</loc>
-    <lastmod>2015-06-15T00:00:00-07:00</lastmod>
+    <lastmod>2015-06-15T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/06/01/the-illusion-of-causality-analysis.html</loc>
-    <lastmod>2015-06-01T00:00:00-07:00</lastmod>
+    <lastmod>2015-06-01T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/05/25/anova.html</loc>
-    <lastmod>2015-05-25T00:00:00-07:00</lastmod>
+    <lastmod>2015-05-25T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/05/18/chi-squared-tests.html</loc>
-    <lastmod>2015-05-18T00:00:00-07:00</lastmod>
+    <lastmod>2015-05-18T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/05/11/comparing-populations.html</loc>
-    <lastmod>2015-05-11T00:00:00-07:00</lastmod>
+    <lastmod>2015-05-11T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/04/26/the-button.html</loc>
-    <lastmod>2015-04-26T00:00:00-07:00</lastmod>
+    <lastmod>2015-04-26T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/04/13/hypothesis-testing.html</loc>
-    <lastmod>2015-04-13T00:00:00-07:00</lastmod>
+    <lastmod>2015-04-13T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/04/06/confidence-intervals.html</loc>
-    <lastmod>2015-04-06T00:00:00-07:00</lastmod>
+    <lastmod>2015-04-06T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/03/30/basic-discrete-distributions.html</loc>
-    <lastmod>2015-03-30T00:00:00-07:00</lastmod>
+    <lastmod>2015-03-30T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/03/24/the-illusion-of-causality.html</loc>
-    <lastmod>2015-03-24T00:00:00-07:00</lastmod>
+    <lastmod>2015-03-24T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/03/16/inferential-statistics.html</loc>
-    <lastmod>2015-03-16T00:00:00-07:00</lastmod>
+    <lastmod>2015-03-16T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/03/09/correlation.html</loc>
-    <lastmod>2015-03-09T00:00:00-07:00</lastmod>
+    <lastmod>2015-03-09T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/03/02/the-german-tank-problem.html</loc>
-    <lastmod>2015-03-02T00:00:00-08:00</lastmod>
+    <lastmod>2015-03-02T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/02/23/estimation.html</loc>
-    <lastmod>2015-02-23T00:00:00-08:00</lastmod>
+    <lastmod>2015-02-23T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/02/16/wikipedia-with-academic-styling.html</loc>
-    <lastmod>2015-02-16T00:00:00-08:00</lastmod>
+    <lastmod>2015-02-16T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/02/09/texas-sharpshooter-fallacy.html</loc>
-    <lastmod>2015-02-09T00:00:00-08:00</lastmod>
+    <lastmod>2015-02-09T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/02/02/The-Distribution-Within.html</loc>
-    <lastmod>2015-02-02T00:00:00-08:00</lastmod>
+    <lastmod>2015-02-02T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2015/01/26/Basic-Continuous-Distributions.html</loc>
-    <lastmod>2015-01-26T00:00:00-08:00</lastmod>
+    <lastmod>2015-01-26T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/11/13/why-data-science-will-power-the-future.html</loc>
-    <lastmod>2014-11-13T00:00:00-08:00</lastmod>
+    <lastmod>2014-11-13T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/11/06/probability-and-statistics-terms.html</loc>
-    <lastmod>2014-11-06T00:00:00-08:00</lastmod>
+    <lastmod>2014-11-06T00:00:00-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/10/29/think-stats-and-the-data-jounryman-curriculum.html</loc>
-    <lastmod>2014-10-29T00:00:00-07:00</lastmod>
+    <lastmod>2014-10-29T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/10/11/misrepresented-healthcare-poll-data.html</loc>
-    <lastmod>2014-10-11T00:00:00-07:00</lastmod>
+    <lastmod>2014-10-11T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/10/03/chocolate-consumption-and-cognitive-function.html</loc>
-    <lastmod>2014-10-03T00:00:00-07:00</lastmod>
+    <lastmod>2014-10-03T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/09/28/finding-data-sets.html</loc>
-    <lastmod>2014-09-28T00:00:00-07:00</lastmod>
+    <lastmod>2014-09-28T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/09/23/a-failed-experiment.html</loc>
-    <lastmod>2014-09-23T00:00:00-07:00</lastmod>
+    <lastmod>2014-09-23T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/09/16/ice-cream-crimes.html</loc>
-    <lastmod>2014-09-16T00:00:00-07:00</lastmod>
+    <lastmod>2014-09-16T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/09/12/thinking-with-data.html</loc>
-    <lastmod>2014-09-12T00:00:00-07:00</lastmod>
+    <lastmod>2014-09-12T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/09/06/birthday-paradox.html</loc>
-    <lastmod>2014-09-06T00:00:00-07:00</lastmod>
+    <lastmod>2014-09-06T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/08/31/data-tools.html</loc>
-    <lastmod>2014-08-31T00:00:00-07:00</lastmod>
+    <lastmod>2014-08-31T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/2014/08/28/data-journeyman.html</loc>
-    <lastmod>2014-08-28T00:00:00-07:00</lastmod>
+    <lastmod>2014-08-28T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>/</loc>
-    <lastmod>2016-06-20T10:49:38-07:00</lastmod>
+    <lastmod>2016-06-27T14:14:26-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>/d3/bills-in-congress/index.html</loc>
-    <lastmod>2016-04-15T10:51:56-07:00</lastmod>
+    <lastmod>2016-04-15T12:51:56-05:00</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
