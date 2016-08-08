@@ -2,7 +2,7 @@
 layout: post
 title: "Entropy and the Central Limit Theorem"
 blurb: "The Central Limit Theorem is extremely fundamental to statistics, but it's so fundamental that it pops up in other places, like physics, too."
-thumbnail: logo.png
+thumbnail: inf-stats-logo.png
 tags: 
   - Statistics
 ---
