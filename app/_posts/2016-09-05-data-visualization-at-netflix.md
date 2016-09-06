@@ -7,9 +7,9 @@ tags:
   - Data Expert
 ---
 
-Data visualization is useful for Exploratory Data Analysis, validating data or models, and conveying and understanding trends in the data. Data Scientists at Netflix use visualization for all three purposes. The following ideas come from some engineers working at Netflix who were asked about data science and data visualization.
+Data visualization is useful for exploratory data analysis, validating data or models, and conveying and understanding trends in the data. Data Scientists at Netflix use visualization for all three purposes. 
 
-The people interviewed are [Kanishka Bhaduri](http://www.csee.umbc.edu/~kanishk1/index.html), Senior Data Scientist, [Fernando Amat](http://www.fernandoamat.com), Senior Research Engineer, [Hossein Taghavi](https://www.linkedin.com/in/mhtaghavi), Senior Research Engineer, and [Kenny Xie](https://www.linkedin.com/in/huizhi-kenny-xie-25522323), Data Scientist.
+The following ideas come from some engineers working at Netflix who were asked about data science and data visualization. The people interviewed are [Kanishka Bhaduri](http://www.csee.umbc.edu/~kanishk1/index.html), Senior Data Scientist, [Fernando Amat](http://www.fernandoamat.com), Senior Research Engineer, [Hossein Taghavi](https://www.linkedin.com/in/mhtaghavi), Senior Research Engineer, and [Kenny Xie](https://www.linkedin.com/in/huizhi-kenny-xie-25522323), Data Scientist.
 
 ###EDA at Netflix
 
@@ -21,4 +21,4 @@ You need to see how your model performs, or you might have multiple models to ch
 
 ###Understanding Data at Netflix
 
-Visualization can be one of the most critical aspects of being a data scientist, since visualization can help put an order to the things your interested in. If you have a very large data set of very high dimensions, you can't visualize the entire data set, so you need to do something intelligent with the data. This is where domain scientists play a huge role: they can point you toward the most important features to explore. For example, results from AB Testing can be communicated using visualization by color coding different statistical significance levels. This is how the AB Testing Dashboard works at Netflix.
+Visualization can be one of the most critical aspects of being a data scientist, since visualization can help put an order to the things your interested in. If you have a very large data set of very high dimensions, you can't visualize the entire data set, so you need to do something intelligent with the data. This is where domain scientists play a huge role: they can point you toward the most important features to explore. As another example, results from AB Testing can be communicated using visualization by color coding different statistical significance levels. This is how the AB Testing Dashboard works at Netflix.
