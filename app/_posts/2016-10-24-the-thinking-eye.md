@@ -2,7 +2,7 @@
 layout: post
 title: "The Thinking Eye"
 blurb: "Edward Tufte gave a talk at Art Center College of Design on some of his work that hasn't been published yet. Tufte is an incredible visionary, and this talk doesn't disappoint."
-thumbnail: logo.png
+thumbnail: eye-logo.png
 tags: 
   - Data Expert
 ---
