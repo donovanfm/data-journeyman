@@ -19,7 +19,7 @@ In [Part 1](http://www.datajourneyman.com/2016/09/05/data-visualization-at-netfl
 
 > Kenny Xie: I mainly work with two kinds of data. The first kind is customer behavior data. For example, how many hours customers stream on Netflix in a certain time window, say one month? How often do customers visit Netflix? And where do customers discover shows? Is it from the home page or from search? The second kind of data I work with is demographic data, such as the sign up country of a customer member, and the device that the customer uses to stream. We have tens of millions of users who stream billions of hours in a quarter. So our data is truly at a massive scale.
 
-**What are the biggest challenges that you face in your job**
+**What are the biggest challenges that you face in your job?**
 
 > KB: I think the biggest challenge is to develop the intuition for a new problem or domain. So if tomorrow somebody comes and tells me, "Let's improve this feature," first I need to understand, what does it mean? Now, if I understand that part then I have to go and get the data for it. One of the other big challenges is to clean the data. I would say typically in my work, 60% to 70% of the time is just used up in downloading the data, making it in the right format that I want, and then there's the big question of how do you clean it? How do you impute missing values? How do you make sure that the data is not biased? And those checks and those things. So, putting together the final data set for modeling is the biggest challenge as a data scientist, apart from which model to select.
 
