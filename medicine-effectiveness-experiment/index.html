@@ -1,0 +1,121 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title></title><meta name=viewport content="width=device-width"><link rel=stylesheet href=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css><link rel=stylesheet href=/css/main.83f8.css></head><body><div class=site><div id=header><a href="/"><div class=title></div><!-- <img class="title" src="/img/title-anglecia.0948.png" /> --><!-- <div class='title'>
+			Data Journeyman
+		</div>	 --><!-- <div class='tagline'>
+			One man's journey from noise to knowledge<img src="/img/datum.e49d.png" />
+		</div> --></a></div><script>function checkAuth() {
+		gapi.auth.authorize({
+            'client_id': '984266776946-3ji6tm0b5741ap8ksqfkjhp6ua1rv0iq.apps.googleusercontent.com',
+            'scope': 'https://www.googleapis.com/auth/spreadsheets',
+            'immediate': true
+         }, handleAuthResult);
+	};
+
+	function handleAuthResult(authResult) {
+        var authorizeDiv = document.getElementById('authorize-div');
+        if (authResult && !authResult.error) {
+			// Hide auth UI, then load client library.
+			authorizeDiv.style.display = 'none';
+			loadSheetsApi();
+        } else {
+			// Show auth UI, allowing the user to initiate authorization by
+			// clicking authorize button.
+			authorizeDiv.style.display = 'inline';
+        }
+	}
+
+	function handleAuthClick(event) {
+		gapi.auth.authorize(
+			// {client_id: CLIENT_ID, scope: [SCOPES], immediate: false},
+			{client_id: '984266776946-3ji6tm0b5741ap8ksqfkjhp6ua1rv0iq.apps.googleusercontent.com', scope: 'https://www.googleapis.com/auth/spreadsheets', immediate: false},
+			handleAuthResult);
+		return false;
+	}
+
+	function loadSheetsApi() {
+        var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+        gapi.client.load(discoveryUrl);
+      }
+
+	function updateContent(step, stepsPerStage, medicineA, isHighIllusory) {
+		try {
+			$
+		} catch (e) {
+			return setTimeout(function(){
+				updateContent(step, stepsPerStage, medicineA, isHighIllusory);
+			}, 0);
+		}
+		if (step==0) {
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('In this experiment, you will try to predict the effectiveness of two medicines. There are two stages of ' + stepsPerStage + ' examples each. Each example only takes a few seconds.<br><br>In Stage 1, you will be presented with one patient at a time, and you will be told whether a patient has received a medicine called ' + medicineA + '. You will guess whether the patient gets better the next day or not, and then you will be shown the actual outcome.<br><br>After the ' + stepsPerStage + ' trials, you will enter your confidence level that the medicine was effective.');
+		} else if (step<=stepsPerStage) {
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('Stage 1. Step ' + step);
+		} else if (step==stepsPerStage+1) {
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('Submit first response.');
+		} else if (step<=2*stepsPerStage+1) {
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('Stage 2. Step ' + step);
+		} else if (step==2*stepsPerStage+2) {
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('Submit second response.');
+			$('#medicine-effectiveness-experiment-container .btn').html('Submit');
+		} else if (step==2*stepsPerStage+3) {
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('Thanks for your submission!');
+			$('#medicine-effectiveness-experiment-container .btn').remove();
+
+			values = [
+			    [
+			        "10.0.0.1","Batatrim","80","40"
+			    ]
+			]
+			gapi.client.sheets.spreadsheets.values.append({
+				spreadsheetId: '1A0slRQ4wbsXgLdv33kJqytJtakzQtKzS2S7LDrC8C60',
+				range: 'Sheet1!A1%3AD1',
+				body: {'values': values},
+				includeValuesInResponse: true,
+				insertDataOption: 'INSERT_ROWS',
+				responseDateTimeRenderOption: 'FORMATTED_STRING',
+				responseValueRenderOption: 'FORMATTED_VALUE',
+				valueInputOption: 'RAW'
+			})
+			// $.ajax({
+			// 	url: 'https://sheets.googleapis.com/v4/spreadsheets/1A0slRQ4wbsXgLdv33kJqytJtakzQtKzS2S7LDrC8C60/values/Sheet1!A1%3AD1:append?includeValuesInResponse=true&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=FORMATTED_STRING&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=RAW&key=AIzaSyBiBVXctI1Bbyd4raPTd3YSH-DldCrUV64', 
+			// 	type: 'post',
+			// 	data: {"values":[["10.0.0.1","Batatrim","80","40"]]},
+			// 	// headers: {'Authorization':'Bearer ya29.Ci_TAxHoxzWPzYVy5B56GaNZ_IueaN4CeuHFTNXr_effLS6aj0ba2zLmYN0TQx91cg'}
+			// });
+		}
+	};
+
+	var step = 0;
+	var stepsPerStage = 2;
+	var medicineA, medicineB, isHighIllusory;
+	if (Math.random()>0.5) {
+		medicineA = 'Aubina';
+	} else {
+		medicineA = 'Batatrim';
+	}
+	isHighIllusory = Math.random()>0.5;
+	setTimeout(function(){
+		updateContent(step, stepsPerStage, medicineA, isHighIllusory);
+	}, 0);</script><script src="https://apis.google.com/js/client.js?onload=checkAuth"></script><div id=medicine-effectiveness-experiment-container><h1>Medicine Effectiveness Experiment</h1><div id=image></div><div id=text></div><a class="btn btn-primary" onclick="step+=1; updateContent(step, stepsPerStage, medicineA, isHighIllusory)">Next</a></div><div id=authorize-div style="display: none"><span>Authorize access to Google Sheets API</span> <!--Button for the user to click to initiate auth sequence --> <button id=authorize-button onclick=handleAuthClick(event)>Authorize</button></div></div><script src=//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js></script><script src=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js></script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({
+		"HTML-CSS": { linebreaks: { automatic: true } },
+		SVG: { linebreaks: { automatic: true } },
+		TeX: { 
+            Macros: { 
+              goodbreak: '\\mmlToken{mo}[linebreak="goodbreak"]{}', 
+              badbreak: ['\\mmlToken{mo}[linebreak="badbreak"]{#1}',1], 
+              nobreak: ['\\mmlToken{mo}[linebreak="nobreak"]{#1}',1], 
+              invisibletimes: ['\\mmlToken{mo}{\u2062}'] 
+            } 
+        } 
+    });</script><script src=/js/scripts.08ae.js></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10466691-5', 'auto');
+  ga('send', 'pageview');</script></body></html>
