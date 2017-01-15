@@ -71,22 +71,26 @@
 			        "10.0.0.1","Batatrim","80","40"
 			    ]
 			]
-			// gapi.client.sheets.spreadsheets.values.append({
-			// 	spreadsheetId: '1A0slRQ4wbsXgLdv33kJqytJtakzQtKzS2S7LDrC8C60',
-			// 	range: 'Sheet1!A1%3AD1',
-			// 	body: {'values': values},
-			// 	includeValuesInResponse: true,
-			// 	insertDataOption: 'INSERT_ROWS',
-			// 	responseDateTimeRenderOption: 'FORMATTED_STRING',
-			// 	responseValueRenderOption: 'FORMATTED_VALUE',
-			// 	valueInputOption: 'RAW'
-			// });
-			$.ajax({
-				url: 'https://sheets.googleapis.com/v4/spreadsheets/1A0slRQ4wbsXgLdv33kJqytJtakzQtKzS2S7LDrC8C60/values/Sheet1!A1%3AD1:append?includeValuesInResponse=true&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=FORMATTED_STRING&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=RAW&key=AIzaSyBiBVXctI1Bbyd4raPTd3YSH-DldCrUV64', 
-				type: 'post',
-				data: {"values":[["10.0.0.1","Batatrim","80","40"]]},
-			// 	// headers: {'Authorization':'Bearer ya29.Ci_TAxHoxzWPzYVy5B56GaNZ_IueaN4CeuHFTNXr_effLS6aj0ba2zLmYN0TQx91cg'}
+			var discoveryUrl =
+            'https://sheets.googleapis.com/$discovery/rest?version=v4';
+	        gapi.client.load(discoveryUrl).then(function(){
+				gapi.client.sheets.spreadsheets.values.append({
+					spreadsheetId: '1A0slRQ4wbsXgLdv33kJqytJtakzQtKzS2S7LDrC8C60',
+					range: 'Sheet1!A1%3AD1',
+					body: {'values': values},
+					includeValuesInResponse: true,
+					insertDataOption: 'INSERT_ROWS',
+					responseDateTimeRenderOption: 'FORMATTED_STRING',
+					responseValueRenderOption: 'FORMATTED_VALUE',
+					valueInputOption: 'RAW'
+				});
 			});
+			// $.ajax({
+			// 	url: 'https://sheets.googleapis.com/v4/spreadsheets/1A0slRQ4wbsXgLdv33kJqytJtakzQtKzS2S7LDrC8C60/values/Sheet1!A1%3AD1:append?includeValuesInResponse=true&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=FORMATTED_STRING&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=RAW&key=AIzaSyBiBVXctI1Bbyd4raPTd3YSH-DldCrUV64', 
+			// 	type: 'post',
+			// 	data: {"values":[["10.0.0.1","Batatrim","80","40"]]},
+			// // 	// headers: {'Authorization':'Bearer ya29.Ci_TAxHoxzWPzYVy5B56GaNZ_IueaN4CeuHFTNXr_effLS6aj0ba2zLmYN0TQx91cg'}
+			// });
 		}
 	};
 
