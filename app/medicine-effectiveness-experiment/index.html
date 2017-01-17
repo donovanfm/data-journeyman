@@ -74,7 +74,7 @@ layout: default
 			isStage2 = true;
 			$('#medicine-effectiveness-experiment-container #section-header').html('<h3>Stage 2. Patient ' + (step-stepsPerStage-1) + ' out of ' + stepsPerStage + '.</h3>');
 			showImage('sick-' + (patientReceivedMedicine ? 'medicine2-' : '') + 'q');
-			$('#medicine-effectiveness-experiment-container #text').html('<p>' + (patientReceivedMedicine ? 'The patient received the both medicines (Aubina and Batatrim).' : 'The patient did not receive any medicine.') + '</p>');
+			$('#medicine-effectiveness-experiment-container #text').html('<p>Patient #' + (step-1) + (patientReceivedMedicine ? ' received the both medicines (Aubina and Batatrim).' : ' did not receive any medicine.') + '</p>');
 			$('#result').html('<p>' + (patientRecovered ? 'The patient recovered!' : 'The patient did not recover.') + '</p>');
 		} else if (step==2*stepsPerStage+2) {
 			hideImages();
