@@ -78,7 +78,7 @@
 			hideImages();
 			$('#medicine-effectiveness-experiment-container #image').html('');
 			$('#medicine-effectiveness-experiment-container #section-header').html('');
-			$('#medicine-effectiveness-experiment-container #text').html('<p>Entery your confidence that the combination of Aubina and Batatrim had a positive effect on the patients. A value of 0 means you think there is no chance they were effective, and a value of 100 means you are certain they were effective.</p><input id="stageTwoConfidenceInput" type="range" min="0" max="100" style="width:300px" oninput="$(\'#stageTwoConfidenceInputValue\').html($(\'#stageTwoConfidenceInput\').val())"><p id="stageTwoConfidenceInputValue">50</p>');
+			$('#medicine-effectiveness-experiment-container #text').html('<p>Entery your confidence that introducing the new medicine ' + (medicineA==='Aubina' ? 'Batatrim' : 'Aubina') + ' had a positive effect on the patients over just the treatment with ' + medicineA + 'in Stage 1. A value of 0 means you think there is no chance they were effective, and a value of 100 means you are certain they were effective.</p><input id="stageTwoConfidenceInput" type="range" min="0" max="100" style="width:300px" oninput="$(\'#stageTwoConfidenceInputValue\').html($(\'#stageTwoConfidenceInput\').val())"><p id="stageTwoConfidenceInputValue">50</p>');
 			$('#result').hide();
 			$('#medicine-effectiveness-experiment-container .btn').html('Submit');
 		} else if (step==2*stepsPerStage+3) {
