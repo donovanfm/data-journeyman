@@ -1,0 +1,146 @@
+---
+layout: default
+---
+
+<script>
+
+	var stageOneConfidence, stageTwoConfidence, patientReceivedMedicine, patientRecovered, isStage2;
+
+	function guidGenerator() {
+	    var S4 = function() {
+	       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+	    };
+	    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+	}
+
+	function showResult() {
+		$('#prediction-question').hide();
+		$('#guess-no-btn').hide();
+		$('#guess-yes-btn').hide();
+		$('#result').show();
+		$('#next-btn').show();
+		showImage('sick-' + (patientReceivedMedicine ? ((isStage2 ? 'medicine2-' : 'medicine-')) : '') + (patientRecovered ? 'well' : 'sick'));
+	}
+
+	function hideResult() {
+		$('#prediction-question').show();
+		$('#guess-no-btn').show();
+		$('#guess-yes-btn').show();
+		$('#result').hide();
+		$('#next-btn').hide();
+	}
+
+	function hideImages() {
+		$('.section-image').hide();
+	}
+
+	function showImage(id) {
+		hideImages();
+		$('.section-image#' + id).show();
+	}
+
+	function updateContent(step, stepsPerStage, medicineA, isHighIllusory, participantId) {
+		try {
+			$
+		} catch (e) {
+			return setTimeout(function(){
+				updateContent(step, stepsPerStage, medicineA, isHighIllusory);
+			}, 0);
+		}
+		if (step==0) {
+			$('.section-image').css({'min-height':'190px'});
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('In this experiment, you will try to predict the effectiveness of two medicines. There are two stages of ' + stepsPerStage + ' examples each. Each example only takes a few seconds.<br><br>In Stage 1, you will be presented with one patient at a time, and you will be told whether that patient has received a medicine called ' + medicineA + '. You will guess whether the patient gets better the next day or not, and then you will be shown the actual outcome. Stage 2 will proceed in the same way, except that two medicines (Aubina and Batatrim) will be administered.<br><br>After the ' + stepsPerStage + ' trials in each stage, you will enter your confidence level that the medicine introcuded in that stage was effective.');
+		} else if (step<=stepsPerStage) {
+			hideResult();
+			patientReceivedMedicine = Math.random() > (isHighIllusory ? 0.2 : 0.8);
+			patientRecovered = Math.random() > 0.3; // 70% recovery rate
+			isStage2 = false;
+			showImage('sick-' + (patientReceivedMedicine ? 'medicine-' : '') + 'q');
+			$('#medicine-effectiveness-experiment-container #section-header').html('<h3>Stage 1. Patient ' + step + ' out of ' + stepsPerStage + '.</h3>');
+			$('#medicine-effectiveness-experiment-container #text').html('<p>Patient #' + step + (patientReceivedMedicine ? ' received the medicine ' + medicineA + '.' : ' did not receive any medicine.') + '</p>');
+			$('#result').html('<p>' + (patientRecovered ? 'The patient recovered!' : 'The patient did not recover.') + '</p>');
+		} else if (step==stepsPerStage+1) {
+			hideImages();
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #section-header').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('<p>Use the slider to enter your confidence that the medicine ' + medicineA + ' had a positive effect on the patients.</p></p>A value of 0 means you think there is no chance it was effective, and a value of 100 means you are certain it was effective.</p><input id="stageOneConfidenceInput" type="range" min="0" max="100" style="width:300px" oninput="$(\'#stageOneConfidenceInputValue\').html($(\'#stageOneConfidenceInput\').val())"><p id="stageOneConfidenceInputValue">50</p>');
+			$('#result').hide();
+		} else if (step<=2*stepsPerStage+1) {
+			hideResult();
+			patientReceivedMedicine = Math.random() > 0.5;
+			patientRecovered = Math.random() > (patientReceivedMedicine ? 0.1 : 0.3)
+			stageOneConfidence = stageOneConfidence || $("#stageOneConfidenceInput").val();
+			isStage2 = true;
+			$('#medicine-effectiveness-experiment-container #section-header').html('<h3>Stage 2. Patient ' + (step-stepsPerStage-1) + ' out of ' + stepsPerStage + '.</h3>');
+			showImage('sick-' + (patientReceivedMedicine ? 'medicine2-' : '') + 'q');
+			$('#medicine-effectiveness-experiment-container #text').html('<p>Patient #' + (step-1) + (patientReceivedMedicine ? ' received the both medicines (Aubina and Batatrim).' : ' did not receive any medicine.') + '</p>');
+			$('#result').html('<p>' + (patientRecovered ? 'The patient recovered!' : 'The patient did not recover.') + '</p>');
+		} else if (step==2*stepsPerStage+2) {
+			hideImages();
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #section-header').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('<p>Use the slider to enter your confidence that introducing the new medicine ' + (medicineA==='Aubina' ? 'Batatrim' : 'Aubina') + ' had a positive effect on the patients over just the treatment with ' + medicineA + ' in Stage 1.</p><p>A value of 0 means you think there is no chance they were effective, and a value of 100 means you are certain they were effective.</p><input id="stageTwoConfidenceInput" type="range" min="0" max="100" style="width:300px" oninput="$(\'#stageTwoConfidenceInputValue\').html($(\'#stageTwoConfidenceInput\').val())"><p id="stageTwoConfidenceInputValue">50</p>');
+			$('#result').hide();
+			$('#medicine-effectiveness-experiment-container .btn').html('Submit');
+		} else if (step==2*stepsPerStage+3) {
+			stageTwoConfidence = $("#stageTwoConfidenceInput").val();
+			$('#medicine-effectiveness-experiment-container #image').html('');
+			$('#medicine-effectiveness-experiment-container #text').html('Thanks for your submission!');
+			$('#medicine-effectiveness-experiment-container .btn').remove();
+
+			values = [
+			    [
+			        participantId,medicineA,stageOneConfidence,stageTwoConfidence,isHighIllusory,stepsPerStage
+			    ]
+			];
+
+			blockspring.runParsed("append-to-google-spreadsheet", { 
+				"file_id": "1A0slRQ4wbsXgLdv33kJqytJtakzQtKzS2S7LDrC8C60", 
+				"worksheet_id": "0", 
+				"values": values
+			}, { 
+				"api_key": "8e7a426ec64e032c221a1072f375088c" 
+			}, function(res){
+			    console.log(res.params);
+			});
+		}
+	};
+
+	var step = 0;
+	var stepsPerStage = 20;
+	var medicineA, isHighIllusory, participantId;
+	if (Math.random()>0.5) {
+		medicineA = 'Aubina';
+	} else {
+		medicineA = 'Batatrim';
+	}
+	isHighIllusory = Math.random()>0.5;
+	if (!window.localStorage['datajourneyman-survey-participant-id']) {
+		window.localStorage['datajourneyman-survey-participant-id'] = guidGenerator();
+	}
+	participantId = window.localStorage['datajourneyman-survey-participant-id'];
+	setTimeout(function(){
+		updateContent(step, stepsPerStage, medicineA, isHighIllusory, participantId);
+	}, 0);
+</script>
+
+<div id="medicine-effectiveness-experiment-container">
+	<h1>Medicine Effectiveness Experiment</h1>
+	<div id="section-header"></div>
+	<div id="sick-q" class="section-image" style="display:none"><img src="/img/experiment-sick-q.png"></div>
+	<div id="sick-sick" class="section-image" style="display:none"><img src="/img/experiment-sick-sick.png"></div>
+	<div id="sick-well" class="section-image" style="display:none"><img src="/img/experiment-sick-well.png"></div>
+	<div id="sick-medicine-q" class="section-image" style="display:none"><img src="/img/experiment-sick-medicine-q.png"></div>
+	<div id="sick-medicine-sick" class="section-image" style="display:none"><img src="/img/experiment-sick-medicine-sick.png"></div>
+	<div id="sick-medicine-well" class="section-image" style="display:none"><img src="/img/experiment-sick-medicine-well.png"></div>
+	<div id="sick-medicine2-q" class="section-image" style="display:none"><img src="/img/experiment-sick-medicine2-q.png"></div>
+	<div id="sick-medicine2-sick" class="section-image" style="display:none"><img src="/img/experiment-sick-medicine2-sick.png"></div>
+	<div id="sick-medicine2-well" class="section-image" style="display:none"><img src="/img/experiment-sick-medicine2-well.png"></div>
+	<div id="text"></div>
+	<div id="prediction-question" style="display:none">Do you think the patient will recover by the next day?</div>
+	<div id="result" style="display:none">Result</div>
+	<a id="guess-no-btn" class="btn btn-danger" onclick="showResult();" style="display:none; margin-top:22px">No</a>
+	<a id="guess-yes-btn" class="btn btn-primary" onclick="showResult();" style="display:none; margin-top:22px">Yes</a>
+	<a id="next-btn" class="btn btn-primary" onclick="step+=1; updateContent(step, stepsPerStage, medicineA, isHighIllusory, participantId);" style="margin-top:10px">Next</a>
+</div>
