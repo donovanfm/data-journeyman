@@ -63,7 +63,7 @@ Francois Chollet, the primary author of Keras, talks about using TensorFlow and 
 
 Chollet goes through a complex example that requires video/image recognition and natural language processing to answer questions about the contents of 40-frame videos. I admit that I was vary impressed by how simply such a complex system could be expressed in Keras.
 
-The Keras integration into TensorFlow isn't available just yet, but it should be coming very soon (version 1.1 and version 1.2)
+The Keras integration into TensorFlow isn't available just yet, but it should be coming very soon (version 1.1 and version 1.2).
 
 ###Outro
 
