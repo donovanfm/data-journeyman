@@ -29,9 +29,9 @@ Megan Kacholia dives deeper into the performance improvements by analyzing bench
 
 Finally, Jeff comes back to talk about some unique uses for TensorFlow:
 
--[Cucumber Recognition](http://workpiles.com/2016/02/tensorflow-cnn-cucumber/)
--[Diabetic Retinopathy Recognition](http://jeffreydf.github.io/diabetic-retinopathy-detection/)
--[Skin Cancer Recognition](http://news.stanford.edu/2017/01/25/artificial-intelligence-used-identify-skin-cancer/)
+- [Cucumber Recognition](http://workpiles.com/2016/02/tensorflow-cnn-cucumber/)
+- [Diabetic Retinopathy Recognition](http://jeffreydf.github.io/diabetic-retinopathy-detection/)
+- [Skin Cancer Recognition](http://news.stanford.edu/2017/01/25/artificial-intelligence-used-identify-skin-cancer/)
 
 ####[XLA: TensorFlow, Compiled!](https://www.youtube.com/watch?v=kAOanJczHA0&index=4&list=PLOU2XLYxmsIKGc_NBoIhTn2Qhraji53cv)
 
