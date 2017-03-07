@@ -4,6 +4,7 @@ title: "Intro to Tensor Flow"
 blurb: "This week we dip our toes into Google's open source machine learning library and get our hands dirty with an example program. Wait, so are we washing our feet or dirtying our hands? Oh, never mind."
 thumbnail: tensor-flow-logo.png
 tags: 
+  - TensorFlow
   - Machine Learning
   - Video
   - Tools and Resources
