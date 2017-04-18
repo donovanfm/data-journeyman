@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Points: Publications"
-blurb: "I'm starting a new monthly series called Data Points where instead of taking a deep dive into a topic, I hit several topics by highlighting data science publications that speak to me, and hopefully some of which will have an impact on you, as well."
+blurb: "I'm starting a new monthly series called Data Points where instead of taking a deep dive into a topic, I touch on several external sources that speak to me, and hopefully some of which will have an impact on you, as well."
 thumbnail: data-point-logo.png
 tags: 
   - Data Points
