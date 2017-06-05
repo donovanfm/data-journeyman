@@ -2,7 +2,7 @@
 layout: post
 title: "Cargo Cult Science"
 blurb: "In his 1974 Caltech Commencement Address, Richard Feynman speaks on scientific integrity, which equally applies to practitioners of data science."
-thumbnail: logo.png
+thumbnail: beaker-logo.png
 tags: 
   - Ethics
 ---
