@@ -127,10 +127,10 @@
         var pointClicked = false;
         for (var i = 0; i < state.nodes.length; i++) {
           point = state.nodes[i]
-          if (x > point[0] - POINT_SIZE &&
-              x < point[0] + POINT_SIZE &&
-              y > point[1] - POINT_SIZE &&
-              y < point[1] + POINT_SIZE) {
+          if (x > point[0] - POINT_SIZE*2 &&
+              x < point[0] + POINT_SIZE*2 &&
+              y > point[1] - POINT_SIZE*2 &&
+              y < point[1] + POINT_SIZE*2) {
             newLines = []
             for (var j = 0; j < state.lines.length; j++) {
               if (!pointsEqual(point, state.lines[j][0]) && !pointsEqual(point, state.lines[j][1])) {
