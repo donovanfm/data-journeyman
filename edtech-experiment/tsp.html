@@ -1,42 +1,237 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title></title><meta name=viewport content="width=device-width"><link rel=stylesheet href=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css><link rel=stylesheet href=/css/main.7af8.css>
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title></title><meta name=viewport content="width=device-width"><link rel=stylesheet href=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css><link rel=stylesheet href=/css/main.7af8.css></head><body><div class=site><div style="margin: 15px; font-size: 32px">Traveling Salesman Problem</div><div style="margin: 15px; font-size: 16px; color:#666; max-width: 600px">Solve the Traveling Salesman Problem below by creating a tour that visits each dot once and returns to the starting dot. Click on the dots to connect them. If you need to remove any lines, double-clicking on a dot will remove all of the lines connected to it. Try to solve the problem using the shortest route possible. Good luck!</div><canvas id=tspCanvas width=600 height=600 style="border:2px solid black; margin: 15px" onclick=processClick(event)></canvas><div id=completeMessage style=display:none><div style="margin: 15px; font-size: 18px">Congratulations! That's a valid solution to the Traveling Salesman Problem.<br>This is the length of your tour:<br><span id=tourLength></span></div></div><script src=//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js></script><script>POINT_SIZE = 5
 
-
-</head><body>
-<div class=site>
-  <canvas id="tspCanvas" width="800" height="800" style="border:2px solid black; margin: 5px" onclick="processClick(event)"></canvas>
-</div>
-    
-
-    <script src=//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js></script>
-    <script> 
-      function processClick(e) {
-
+      function checkForHamiltonianCycle() {
+        points = {}
+        state.cycleLength = 0;
+        for (var i = 0; i < state.lines.length; i++) {
+          start = state.lines[i][0]
+          end = state.lines[i][1]
+          points[start] = points[start] ? points[start] + 1 : 1
+          points[end] = points[end] ? points[end] + 1 : 1
+          state.cycleLength += lineLength(start, end)
+        }
+        allDegreesAreTwo = true
+        for (var i = 0; i < Object.keys(points).length; i++) {
+          if (points[Object.keys(points)[i]] != 2) allDegreesAreTwo = false
+        }
+        startingNode = state.nodes[0]
+        currentNode = startingNode
+        visitedNodes = []
+        cycleLength = 0
+        do {
+          visitedNodes.push(currentNode)
+          nodeFound = false
+          for (var i = 0; i < state.lines.length; i++) {
+            if (pointsEqual(currentNode, state.lines[i][0]) && 
+              (!pointInList(state.lines[i][1], visitedNodes) || 
+                (cycleLength == state.nodes.length - 1 && pointsEqual(state.lines[i][1], startingNode)))) {
+              currentNode = state.lines[i][1];
+              cycleLength++;
+              nodeFound = true
+              break
+            } else if (pointsEqual(currentNode, state.lines[i][1]) && 
+              (!pointInList(state.lines[i][0], visitedNodes) || 
+                (cycleLength == state.nodes.length - 1 && pointsEqual(state.lines[i][0], startingNode)))) {
+              currentNode = state.lines[i][0];
+              cycleLength++;
+              nodeFound = true
+              break
+            }
+          }
+          if (!nodeFound) {
+            break
+          }
+        } while (!pointsEqual(currentNode, startingNode))
+        state.hamiltonianCycleComplete = allDegreesAreTwo && 
+          //Object.keys(points).length == state.nodes.length && 
+          cycleLength == state.nodes.length;
+        if (state.hamiltonianCycleComplete) {
+          $("#completeMessage").show();
+          $("#tourLength").text(state.cycleLength);
+          state.connectionInProgress = false
+          state.connectionStartingPoint = null
+          window.scrollTo(0,document.body.scrollHeight);
+        } else {
+          $("#completeMessage").hide();
+        }
       }
 
-      function drawDot(point) {
-        var c=document.getElementById("tspCanvas");
-        var ctx=c.getContext("2d");
+      function pointsEqual(a, b) {
+        return a[0] == b[0] && a[1] == b[1];
+      }
+
+      function pointInList(point, pointList) {
+        inList = false;
+        for (var i = 0; i < pointList.length; i++) {
+          if (pointsEqual(point, pointList[i])) inList = true;
+        }
+        return inList;
+      }
+
+      function lineInList(line, lineList) {
+        inList = false;
+        for (var i = 0; i < lineList.length; i++) {
+          if (pointsEqual(line[0], lineList[i][0]) && pointsEqual(line[1], lineList[i][1])) {
+            inList = true;
+          }
+          if (pointsEqual(line[0], lineList[i][1]) && pointsEqual(line[1], lineList[i][0])) {
+            inList = true;
+          }
+        }
+        return inList;
+      }
+
+      function lineLength(start, end) {
+        return Math.pow(Math.pow(start[0]-end[0], 2) + Math.pow(start[1]-end[1], 2), 0.5)
+      }
+
+      function processClick(e) {
+        var x = event.offsetX;
+        var y = event.offsetY;
+        var pointClicked = false;
+        for (var i = 0; i < state.nodes.length; i++) {
+          point = state.nodes[i]
+          if (x > point[0] - POINT_SIZE &&
+              x < point[0] + POINT_SIZE &&
+              y > point[1] - POINT_SIZE &&
+              y < point[1] + POINT_SIZE) {
+            if (state.connectionInProgress) {
+              state.connectionInProgress = false
+              if (!lineInList([state.connectionStartingPoint, point], state.lines)) {
+                state.lines.push([state.connectionStartingPoint, point])
+              }
+            }
+            if (!state.connectionInProgress) {          
+              state.connectionInProgress = true
+              state.connectionStartingPoint = point
+            }
+            pointClicked = true;
+            break
+          }
+        }
+        if (!pointClicked) {
+          state.connectionInProgress = false
+          state.connectionStartingPoint = null
+          var canvas = document.getElementById("tspCanvas");
+          drawCanvas(canvas)
+        } else {
+          checkForHamiltonianCycle()
+        }
+      }
+
+      function processDoubleClick(e) {
+        state.connectionInProgress = false
+        state.connectionStartingPoint = null
+        var x = event.offsetX;
+        var y = event.offsetY;
+        var pointClicked = false;
+        for (var i = 0; i < state.nodes.length; i++) {
+          point = state.nodes[i]
+          if (x > point[0] - POINT_SIZE &&
+              x < point[0] + POINT_SIZE &&
+              y > point[1] - POINT_SIZE &&
+              y < point[1] + POINT_SIZE) {
+            newLines = []
+            for (var j = 0; j < state.lines.length; j++) {
+              if (!pointsEqual(point, state.lines[j][0]) && !pointsEqual(point, state.lines[j][1])) {
+                newLines.push(state.lines[j]);
+              }
+            }
+            state.lines = newLines;
+            var canvas = document.getElementById("tspCanvas");
+            drawCanvas(canvas)
+            checkForHamiltonianCycle();
+            break
+          }
+        }
+      }
+
+      function drawDot(canvas, point) {
+        var ctx=canvas.getContext("2d");
         ctx.beginPath();
-        ctx.arc(point[0], point[1],3,0,2*Math.PI);
+        ctx.arc(point[0], point[1],POINT_SIZE,0,2*Math.PI);
         ctx.stroke();
         ctx.fill();
       }
 
-      function setupTSP(nodes) {
-        for (var i = 0; i < nodes.length; i++) {
-          drawDot(nodes[i])
+      function drawLine(canvas, startPoint, endPoint) {
+        var ctx=canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(startPoint[0], startPoint[1]);
+        ctx.lineTo(endPoint[0], endPoint[1]);
+        ctx.stroke();
+      }
+
+      function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return [
+          evt.clientX - rect.left,
+          evt.clientY - rect.top
+        ];
+      }
+
+      function drawCanvas(canvas) {
+        var ctx=canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < state.nodes.length; i++) {
+          drawDot(canvas, state.nodes[i])
+        }
+        for (var i = 0; i < state.lines.length; i++) {
+          drawLine(canvas, state.lines[i][0], state.lines[i][1]);
         }
       }
 
-      nodes1 = [[100, 200], [400, 230], [180, 715], [680, 550], [730, 695], [590, 45], [230, 700]]
+      function qs(key) {
+        key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+        var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+        return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+      }
 
-      setupTSP(nodes1)
-    </script>
-    
-    <script src=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js></script><script src=//cdn.blockspring.com/blockspring.js></script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({
-		"HTML-CSS": { linebreaks: { automatic: true } },
-		SVG: { linebreaks: { automatic: true } },
-		TeX: { 
+      function setupTSP() {
+        var canvas = document.getElementById("tspCanvas");
+        drawCanvas(canvas)
+        canvas.addEventListener('mousemove', function(evt) {
+          if (state.connectionInProgress) {
+            drawCanvas(canvas)
+            var mousePos = getMousePos(canvas, evt);
+            drawLine(canvas, state.connectionStartingPoint, mousePos);
+          }
+        }, false);
+        canvas.addEventListener('dblclick', processDoubleClick);
+      }
+
+      numberOfNodes = 10
+      nodesOption1 = []
+      nodesOption2 = []
+      for (var i = 0; i < numberOfNodes; i++) {
+        nodesOption1.push([parseInt(600*Math.random()), parseInt(600*Math.random())]);
+      }
+      for (var i = 0; i < numberOfNodes*2.5; i++) {
+        nodesOption2.push([parseInt(600*Math.random()), parseInt(600*Math.random())]);
+      }
+
+      nodes1 = [[100, 200], [400, 230], [180, 715], [680, 550], [730, 695], [590, 45], [230, 700]]
+      nodesOptions = [
+        [[186, 349],[274, 340],[89, 468],[489, 135],[151, 20],[72, 190],[269, 305],[309, 488],[71, 316],[559, 257]], 
+        [[483, 50],[373, 356],[390, 440],[495, 180],[327, 484],[104, 345],[479, 142],[229, 580],[234, 564],[321, 154],[580, 587],[374, 304],[142, 333],[450, 426],[226, 393],[99, 85],[51, 250],[315, 522],[158, 272],[256, 28],[364, 225],[338, 383],[405, 11],[292, 366],[560, 388], [24, 380], [41, 557], [38, 491], [519, 302], [18, 532]]]
+
+      nodesIndex = parseInt(qs('idx'))
+      if (!nodesIndex || (nodesIndex !== 0 && nodesIndex !== 1)) {
+        nodesIndex = 0;
+      }
+
+      state = {
+        nodes: nodesOptions[nodesIndex],
+        lines: [],
+        connectionInProgress: false,
+        connectionStartingPoint: null,
+        hamiltonianCycleComplete: false,
+        cycleLength: 0
+      }
+      setupTSP()</script><script src=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js></script><script src=//cdn.blockspring.com/blockspring.js></script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({
+    "HTML-CSS": { linebreaks: { automatic: true } },
+    SVG: { linebreaks: { automatic: true } },
+    TeX: { 
             Macros: { 
               goodbreak: '\\mmlToken{mo}[linebreak="goodbreak"]{}', 
               badbreak: ['\\mmlToken{mo}[linebreak="badbreak"]{#1}',1], 
@@ -44,10 +239,10 @@
               invisibletimes: ['\\mmlToken{mo}{\u2062}'] 
             } 
         } 
-    });</script><script src=/js/scripts.08ae.js></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    });</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-10466691-5', 'auto');
-  ga('send', 'pageview');</script></body></html>
+  ga('send', 'pageview');</script></div></body></html>
