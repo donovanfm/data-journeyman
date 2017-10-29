@@ -91,10 +91,10 @@
         var pointClicked = false;
         for (var i = 0; i < state.nodes.length; i++) {
           point = state.nodes[i]
-          if (x > point[0] - POINT_SIZE &&
-              x < point[0] + POINT_SIZE &&
-              y > point[1] - POINT_SIZE &&
-              y < point[1] + POINT_SIZE) {
+          if (x > point[0] - POINT_SIZE*2 &&
+              x < point[0] + POINT_SIZE*2 &&
+              y > point[1] - POINT_SIZE*2 &&
+              y < point[1] + POINT_SIZE*2) {
             if (state.connectionInProgress) {
               state.connectionInProgress = false
               if (!lineInList([state.connectionStartingPoint, point], state.lines)) {
@@ -125,6 +125,7 @@
         var x = event.offsetX;
         var y = event.offsetY;
         var pointClicked = false;
+        console.log([x,y])
         for (var i = 0; i < state.nodes.length; i++) {
           point = state.nodes[i]
           if (x > point[0] - POINT_SIZE*2 &&
