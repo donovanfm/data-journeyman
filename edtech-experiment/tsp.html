@@ -98,7 +98,7 @@
         return Math.pow(Math.pow(start[0]-end[0], 2) + Math.pow(start[1]-end[1], 2), 0.5)
       }
 
-      function processClick(e) {
+      function processClick(event) {
         var x = event.offsetX;
         var y = event.offsetY;
         var pointClicked = false;
@@ -132,7 +132,7 @@
         drawCanvas()
       }
 
-      function processDoubleClick(e) {
+      function processDoubleClick(event) {
         state.connectionInProgress = false
         state.connectionStartingPoint = null
         var x = event.offsetX;
