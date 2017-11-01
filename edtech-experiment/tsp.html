@@ -1,4 +1,17 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title></title><meta name=viewport content="width=device-width"><link rel=stylesheet href=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css><link rel=stylesheet href=/css/main.7af8.css></head><body><div class=site><div style="margin: 15px; font-size: 32px">Traveling Salesman Problem</div><div style="margin: 15px; font-size: 16px; color:#666; max-width: 600px">Solve the Traveling Salesman Problem below by creating a tour that visits each dot once and returns to the starting dot. Click on the dots to connect them. If you need to remove any lines, double-clicking on a dot will remove all of the lines connected to it. Try to solve the problem using the shortest route possible. Good luck!</div><canvas id=tspCanvas width=600 height=600 style="border:2px solid black; margin: 15px" onclick=processClick(event)></canvas><div id=completeMessage style=display:none><div style="margin: 15px; font-size: 18px">Congratulations! That's a valid solution to the Traveling Salesman Problem.<br>This is the length of your tour:<br><span id=tourLength></span></div></div><script src=//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js></script><script>POINT_SIZE = 5
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title></title><meta name=viewport content="width=device-width"><link rel=stylesheet href=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css><link rel=stylesheet href=/css/main.7af8.css></head><body><div class=site><div style="margin: 15px; font-size: 32px">Traveling Salesman Problem</div><div style="margin: 15px; font-size: 16px; color:#666; max-width: 600px">Solve the Traveling Salesman Problem below by creating a tour that visits each dot once and returns to the starting dot. Click on the dots to connect them. If you need to remove any lines, double-clicking on a dot will remove all of the lines connected to it. If you need to cancel a connection in progress, simply click anywhere on the canvas that isn't on a dot.</div><div style="margin:15px; font-size: 16px; color: #666; max-width: 600px">Try to solve the problem using the shortest route possible. Good luck!</div><div style="margin:15px; font-size: 16px"><input type=radio name=mode value=chain checked>Chain Mode <span style="margin-right:35px; color:#555" class="glyphicon glyphicon-info-sign" aria-hidden=true data-toggle=tooltip title="With chain mode, you can make many connections in a row easily. To cancel a connection, simply click anywhere on the canvas that isn't a dot."></span><input type=radio name=mode value=standard>Standard Mode <span style="margin-right: 35px; color:#555" class="glyphicon glyphicon-info-sign" aria-hidden=true data-toggle=tooltip title="With standard mode, you won't start a connection immediately after making one. This might work better if you want to make connections in different parts of the canvas."></span> <button id=reset>Reset State</button></div><canvas id=tspCanvas width=600 height=600 style="border:2px solid black; margin: 15px" onclick=processClick(event)></canvas><div id=completeMessage style=display:none><div style="margin: 15px; font-size: 18px">Congratulations! That's a valid solution to the Traveling Salesman Problem.<br>This is the length of your tour:<br><span id=tourLength></span></div></div><script src=//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js></script><script>$(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $("[name=mode]").click(function() {
+          state.mode = this.value;
+        });
+        $("#reset").click(function() {
+          resetLines = confirm("Are you sure? This will delete all of the connections you've made.");
+          if (resetLines) { 
+            state.lines = []; 
+            drawCanvas();
+          }
+        })
+      });
+      POINT_SIZE = 5
 
       function checkForHamiltonianCycle() {
         points = {}
@@ -100,23 +113,23 @@
               if (!lineInList([state.connectionStartingPoint, point], state.lines)) {
                 state.lines.push([state.connectionStartingPoint, point])
               }
+              pointClicked = true
             }
-            if (!state.connectionInProgress) {          
+            if (!state.connectionInProgress && (!pointClicked || state.mode == "chain")) {          
               state.connectionInProgress = true
               state.connectionStartingPoint = point
+              pointClicked = true;
             }
-            pointClicked = true;
             break
           }
         }
         if (!pointClicked) {
           state.connectionInProgress = false
           state.connectionStartingPoint = null
-          var canvas = document.getElementById("tspCanvas");
-          drawCanvas(canvas)
-        } else {
-          checkForHamiltonianCycle()
-        }
+          
+        } 
+        checkForHamiltonianCycle()
+        drawCanvas()
       }
 
       function processDoubleClick(e) {
@@ -139,15 +152,15 @@
               }
             }
             state.lines = newLines;
-            var canvas = document.getElementById("tspCanvas");
-            drawCanvas(canvas)
+            drawCanvas()
             checkForHamiltonianCycle();
             break
           }
         }
       }
 
-      function drawDot(canvas, point) {
+      function drawDot(point) {
+        var canvas = document.getElementById("tspCanvas");
         var ctx=canvas.getContext("2d");
         ctx.beginPath();
         ctx.arc(point[0], point[1],POINT_SIZE,0,2*Math.PI);
@@ -155,7 +168,8 @@
         ctx.fill();
       }
 
-      function drawLine(canvas, startPoint, endPoint) {
+      function drawLine(startPoint, endPoint) {
+        var canvas = document.getElementById("tspCanvas");
         var ctx=canvas.getContext("2d");
         ctx.beginPath();
         ctx.moveTo(startPoint[0], startPoint[1]);
@@ -163,7 +177,8 @@
         ctx.stroke();
       }
 
-      function getMousePos(canvas, evt) {
+      function getMousePos(evt) {
+        var canvas = document.getElementById("tspCanvas");
         var rect = canvas.getBoundingClientRect();
         return [
           evt.clientX - rect.left,
@@ -171,14 +186,15 @@
         ];
       }
 
-      function drawCanvas(canvas) {
+      function drawCanvas() {
+        var canvas = document.getElementById("tspCanvas");
         var ctx=canvas.getContext("2d");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (var i = 0; i < state.nodes.length; i++) {
-          drawDot(canvas, state.nodes[i])
+          drawDot(state.nodes[i])
         }
         for (var i = 0; i < state.lines.length; i++) {
-          drawLine(canvas, state.lines[i][0], state.lines[i][1]);
+          drawLine(state.lines[i][0], state.lines[i][1]);
         }
       }
 
@@ -189,13 +205,13 @@
       }
 
       function setupTSP() {
+        drawCanvas()
         var canvas = document.getElementById("tspCanvas");
-        drawCanvas(canvas)
         canvas.addEventListener('mousemove', function(evt) {
           if (state.connectionInProgress) {
-            drawCanvas(canvas)
-            var mousePos = getMousePos(canvas, evt);
-            drawLine(canvas, state.connectionStartingPoint, mousePos);
+            drawCanvas()
+            var mousePos = getMousePos(evt);
+            drawLine(state.connectionStartingPoint, mousePos);
           }
         }, false);
         canvas.addEventListener('dblclick', processDoubleClick);
@@ -227,7 +243,8 @@
         connectionInProgress: false,
         connectionStartingPoint: null,
         hamiltonianCycleComplete: false,
-        cycleLength: 0
+        cycleLength: 0,
+        mode: 'chain'
       }
       setupTSP()</script><script src=//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js></script><script src=//cdn.blockspring.com/blockspring.js></script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({
     "HTML-CSS": { linebreaks: { automatic: true } },
